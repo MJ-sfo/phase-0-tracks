@@ -1,0 +1,10 @@
+#box-oct {
+  position: relative; top: 380px; left: 15px;
+}
+#box-hat {
+  position: absolute;
+}
+
+#box-gls {
+  position: relative; top: 190px; left: 65px
+}
