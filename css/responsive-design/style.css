@@ -30,3 +30,18 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+/*  added to "do the thing" */
+body{
+  max-width: 960px;
+  display: inline;
+}
+#external-links{
+  /*position: absolute-left;*/
+  width: 200px;
+  display: inline;
+}
+main{
+  width: 756px;
+  vertical-align: top;
+  vertical-align: left;
+}
