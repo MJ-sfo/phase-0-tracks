@@ -35,13 +35,21 @@ body{
   max-width: 960px;
   display: inline;
 }
-#external-links{
-  /*position: absolute-left;*/
+  /* External Links section in a sidebar */
+
+  /* #external-links{ */
+ nav{    
   width: 200px;
+  float: left;
   display: inline;
 }
-main{
+/*main{
   width: 756px;
   vertical-align: top;
   vertical-align: left;
+}*/
+section#external-links{
+  width: 756px;
+  float: left;
+  display: inline;     
 }
