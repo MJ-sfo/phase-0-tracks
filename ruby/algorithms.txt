@@ -1,0 +1,62 @@
+# algorithm for using an elevator.
+face door
+look to left of door, between three feet above floor and five feet above floor
+look for buttons 
+  if no buttons, 
+    look to right of door, between three feet above floor and five feet above floor
+
+look at top row of buttons
+look at far left of buttons -does it equal 1?
+  if not 
+    look at far left of buttons -does it equal 1?
+      if not,
+        look at top row of buttons
+        look at far left of buttons -does it equal 1?
+          if not 
+          look at far right of buttons -does it equal 1?
+ask which floor wish to go
+convert answer to number
+press button with corresponding number
+
+
+# reading New York Times
+Sit in front of computer
+  is computer on?
+    if not, press on button
+  is browser on screen?
+    if not
+      pick up mouse
+      move to bottom of screen
+      move to left of screen
+      move right until reach browser button
+      stop mouse
+      right click
+ pick up mouse
+ move mouse to top of screen
+ move mouse down 
+ when moouse is in search box, stop
+ right click mouse
+ pick up keyboard
+  is keyboard space bar facing me?
+    if not, turn keyboard around 180 degrees
+put finger on bottom row
+move finger up one row
+move finger to left key
+move finger to right six key
+press key  
+move finger up two rows
+is finger above y key?
+  if no
+    move finger one key to left
+    is finger above y key?
+      if no
+      move finger one key to left
+press key
+move finger down one row
+move finger to far right button (enter key)
+press key
+move eyes to terminal
+read
+
+
+
