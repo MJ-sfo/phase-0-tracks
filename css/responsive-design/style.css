@@ -1,4 +1,4 @@
-blockquote {
+ blockquote {
   border-left: 5px solid blue;
   padding: 15px;
   margin-left: 0px;
@@ -9,16 +9,14 @@ cite {
   margin-top: 10px;
 }
 
-#external-links ul {
-  list-style-type: none;
-  padding-left: 0px;
-}
+
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
+
 img {
-  width: 100%;
+  max-width: 76%;
 }
 
 figure {
@@ -30,26 +28,31 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
-/*  added to "do the thing" */
+ /* added to "do the thing" */
 body{
-  max-width: 960px;
+  max-width: 756px;
   display: inline;
+
 }
   /* External Links section in a sidebar */
 
   /* #external-links{ */
- nav{    
+/* nav{    
   width: 200px;
   float: left;
   display: inline;
-}
-/*main{
-  width: 756px;
+} */
+main{  
+  max-width: 77%;
   vertical-align: top;
   vertical-align: left;
-}*/
+}
 section#external-links{
-  width: 756px;
+  width: 20%;
   float: left;
   display: inline;     
-}
+}  
+ #external-links ul {
+  list-style-type: none;
+  padding-left: 0px;
+}  
