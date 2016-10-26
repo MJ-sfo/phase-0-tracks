@@ -9,14 +9,14 @@ hamcol = gets.chomp
 p "A #{hamcol} hamster."
 p "is the hamster is a good candidate for adoption?"
 adopt = gets.chomp
-p "so the hamster is a #{hamnm} candidate."
+p "so the hamster is a #{adopt} candidate."
 p "how old is hamster?"
 age=gets.chomp
 
-if age = ""
+if age == ""
   age=nil
   p "so you aren't sure of the age?"
-elsif condition
+elsif 
   p "OK, the hamster is #{age} years old."
   age=age.to_i
 end
