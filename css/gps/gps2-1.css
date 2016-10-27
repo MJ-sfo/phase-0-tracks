@@ -1,3 +1,28 @@
-.column-1 {
-  color: yellow;
+
+.column-1{
+  float: left;
+  display: inline; 
+  width: 48%;
+  margin: 0 auto; 
+  background-color: orange; 
+  margin-left: 5px;
+}
+
+.column-2{
+  float: right;
+  display: block;
+  width: 48%;
+  margin: 0 auto;
+  background-color: green; 
+  text-decoration: underline;
+}
+
+footer{
+  margin-top: 100px; border: 1px solid black; 
+  padding-top: 30px;
+  display: inline-block; 
+  width: 90%;
+}
+h2{
+  font-style: italic;
 }
