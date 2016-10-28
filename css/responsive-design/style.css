@@ -30,13 +30,11 @@ figcaption {
 }
  /* added to "do the thing" */
 body{
-  max-width: 756px;
+  max-width: 77%;
   display: inline;
-
 }
-  /* External Links section in a sidebar */
 
-  /* #external-links{ */
+  /* #external-links */
 /* nav{    
   width: 200px;
   float: left;
@@ -52,6 +50,7 @@ section#external-links{
   float: left;
   display: inline;     
 }  
+ /* External Links section in a sidebar */
  #external-links ul {
   list-style-type: none;
   padding-left: 0px;
