@@ -6,8 +6,9 @@
   margin: 0 auto; 
   background-color: orange; 
   margin-left: 5px;
-}
 
+}
+/*   with float on columns, don't need display*/
 .column-2{
   float: right;
   display: block;
@@ -16,7 +17,9 @@
   background-color: green; 
   text-decoration: underline;
 }
-
+/* could have done  clear: both: (or clear left, clear right) -this destroys float of columns - 
+then rushes to top of WHAT IS BELLOW columns
+;   */
 footer{
   margin-top: 100px; border: 1px solid black; 
   padding-top: 30px;
@@ -25,4 +28,14 @@ footer{
 }
 h2{
   font-style: italic;
+  font: ne;
+
+}
+/* comma does two sections at same time */
+header, footer {
+  background-color: red;
+}
+/* CLASS space TAG  */
+.column-1 h2{
+  color: pink;
 }
