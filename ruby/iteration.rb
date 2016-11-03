@@ -55,26 +55,32 @@ delete_method
 
 #2. A method that filters a data structure for only items 
 #   that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
-
 def filter_method
-puts  "Filter Method- array"
-array = [ 3, 4, 7, 12 ]
-result = array.select do |elem|
-  elem > 5
-end
-puts result
-puts  "Filter Method- hash"
-hash = { num1: 2, num2: 3, num3: 5, num4: 7 }
-result = hash.select do |num, prime_num|
-  prime_num >= 5
-end+
-puts result
-end
+    array = [ 3, 4, 7, 12 ]
+    puts "array is: #{array}"
+    p  "Filter Method- array - abover '5'"
+    result = array.select do |elem|
+        elem > 5
+    end
 
+    puts result
+    hash = { 
+        num1: 2, 
+        num2: 3, 
+        num3: 5, 
+        num4: 7, 
+        }
+    puts "hash is: #{hash}" 
+    p  "Filter Method- hash - abover '5'"
+    result = hash.select do |num, prime_num|
+        prime_num >= 5
+    end
+    puts result
+end
 filter_method
 
 #3.  A different method that filters a data structure 
-#for only items satisfying a certain condition -- Ruby offers several options!
+#    for only items satisfying a certain condition -- Ruby offers several options!
 
 def filter_new_method
     puts  "Filter Method- array"
@@ -95,7 +101,23 @@ end
 filter_new_method
 
 
-
+def filter_new_method
+    p  "Filter Method- array"
+    a = [10,20,30,40,50]
+    p "array is: #{a}"
+    new_num = a.find_all do|n|
+        n > 15
+    end
+    print new_num
+    puts  "Filter Method- hash \n"
+    a = {ten: 10,twenty: 20,thirty: 30,fourty: 40,five: 50}
+    p "hash is: #{hash}"
+    new_num = a.find_all do|num, value|
+        value > 15
+    end
+    print new_num
+end
+filter_new_method
 
 #4.  A method that will remove items from a data structure until the condition in the block evaluates to false,
 #then stops (you may not find a perfectly working option for the hash, and that's okay).
