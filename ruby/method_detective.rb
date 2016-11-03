@@ -6,21 +6,29 @@
 
 # "iNvEsTiGaTiOn".<???>
 # => “InVeStIgAtIoN”
-
+"iNvEsTiGaTiOn".swapcase 
+"iNvEsTiGaTiOn".swapcase!
 # "zom".<???>
 # => “zoom”
-
+"zom".replace "zoom"
+"zom".gsub!("o", "oo")
+"zom".gsub("o", "oo")
 # "enhance".<???>
 # => "    enhance    "
-
+"   "<<"enhance"<<"   "
+"enhance".insert(-1, '   ').insert(0, '   ')
 # "Stop! You’re under arrest!".<???>
 # => "STOP! YOU’RE UNDER ARREST!"
-
+"Stop! You’re under arrest!".upcase! 
+"Stop! You’re under arrest!".upcase
 # "the usual".<???>
 #=> "the usual suspects"
+"the usual"<<" suspects"
+"the usual".insert(-1, " suspects")
 
 # " suspects".<???>
 # => "the usual suspects"
+" suspects".insert(0, " the usual")
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
