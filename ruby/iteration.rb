@@ -1,3 +1,4 @@
+# Write Your Own Method That Takes a Block
 def say_hello(a, b)
     puts "hello my friends #{a} and #{b}!"
     puts "before running block"
@@ -8,7 +9,7 @@ end
 
 say_hello("Dave", "Sam"){|x,y| puts "Have a great day  #{x} #{y}"}
 
-
+# Release 1: Use each, map, and map!
 def change_book
     books = ["Pride & Prejudice", "Da vinci code", "I Was Told There'd Be Cake ", "To Kill a Mockingbird ", "The Man Without Qualities " ]
     books.each{|book| puts "My favourite book is #{book}" }
@@ -50,7 +51,7 @@ end
 p city
 
 
-#A method that iterates through the items, 
+#1.  A method that iterates through the items, 
 # deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
 
 def delete_method
@@ -98,7 +99,7 @@ delete_method
 
 
 
-# A method that filters a data structure for only items 
+#2. A method that filters a data structure for only items 
 # that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
 
 def filter_method
@@ -112,13 +113,13 @@ puts  "Filter Method- hash"
 hash = { num1: 2, num2: 3, num3: 5, num4: 7 }
 result = hash.select do |num, prime_num|
   prime_num >= 5
-end
+end+
 puts result
 end
 
 filter_method
 
-#A different method that filters a data structure 
+#3.  A different method that filters a data structure 
 #for only items satisfying a certain condition -- Ruby offers several options!
 
 def filter_new_method
@@ -142,7 +143,7 @@ filter_new_method
 
 
 
-#A method that will remove items from a data structure until the condition in the block evaluates to false,
+#4.  A method that will remove items from a data structure until the condition in the block evaluates to false,
 #then stops (you may not find a perfectly working option for the hash, and that's okay).
 
 # delete elements of array, until meets a number that is even.  then stops
