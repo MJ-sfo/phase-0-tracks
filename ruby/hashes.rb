@@ -1,4 +1,3 @@
-# pseudocode 
 # enter data
 interior_des={}
 puts "Please enter your information for interior design!"
@@ -19,13 +18,14 @@ else
   interior_des[:Gaelic] = nil
 end
 puts interior_des
+
 # now checks data
 puts "Please list category you wish to change, or just type 'none'."
 change = gets.chomp
 change = change.strip
 if change.upcase != "NONE"  
   puts "What do you want to change #{change} to?"
-  interior_des[change.to_sym] = gets.chomp  # not recognizing "change" as variable containing text
+  interior_des[change.to_sym] = gets.chomp  
 end
 puts interior_des
 
