@@ -6,30 +6,19 @@ def say_hello(a, b)
     yield("Jack")
     puts "after running block"
 end
-
-say_hello("Dave", "Sam"){|x,y| puts "Have a great day  #{x} #{y}"}
+say_hello("Dave", "Sam"){|x,y| puts "Have a great day #{x},  #{y}"}
 
 # Release 1: Use each, map, and map!
 def change_book
     books = ["Pride & Prejudice", "Da vinci code", "I Was Told There'd Be Cake ", "To Kill a Mockingbird ", "The Man Without Qualities " ]
-    books.each{|book| puts "My favourite book is #{book}" }
-end    
-
-p change_book
-
-
-
-def change_book
-    books = ["Pride & Prejudice", "Da vinci code", "I Was Told There'd Be Cake ", "To Kill a Mockingbird ", "The Man Without Qualities " ]
     puts "using each"
-    books.each{|book| puts "My favourite book is #{book}" }
+    books.each{|book| puts "My favorite book is #{book}" }
     puts "changes last letter in Book Title, using map"
-    books.map!{|book| puts "My favourite book is #{book.next}" }
-    
-end
-    
+    books.map{|book| puts "My favorite book is #{book.next}" }
+    puts "changes last letter in Book Title, using map! (with exclamation mark)"
+    books.map!{|book| puts "My favorite book is #{book.next}" }
+    end
 p change_book
-
 
 def city
     city_fun = {
@@ -37,70 +26,35 @@ def city
     high: "Denver",
     wet: "London",
     hot: "Lome",
-    }
-    
+    }    
     puts "using each"
-    city_fun.each{|condition, city| puts "I am from #{city} which is very #{condition} " }
-    
+    city_fun.each{|condition, city| puts "I am from #{city} which is very #{condition} " }    
     puts "using map"
     city_fun.map{|condition, city| puts "I am from #{city} which is very #{condition}" }
-    
-    
+    puts "'map!' does not work on hash"
 end
-
 p city
-
 
 #1.  A method that iterates through the items, 
 # deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
-
 def delete_method
     language = ["ruby", "C"]
-    puts "Implementing Array"
-    print language
-    puts
+    p "Implementing Array"
+    puts language
+    p "now delete if start with 'r'"
     language.delete_if { |lang| lang.start_with?'r' }
-    print language
-    puts
-    puts "Implementing hash"
+    puts language
+    p "Implementing hash"
     language = {"lang1" =>"Phython", "lang2" => "Javascript"}
-    print language
-    puts
+    puts language
+    p "now only print if after named 'Phython'"
     language.delete_if { |num, language| language == "Phython" }
-    print language
+    puts language
 end
-
 delete_method
-
-A method that iterates through the items, 
-# deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
-
-
-
-def delete_method
-    language = ["ruby", "C"]
-    puts "Implementing Array"
-    print language
-    puts
-    language.delete_if { |lang| lang.start_with?'r' }
-    print language
-    puts
-    puts "Implementing hash"
-    language = {"lang1" =>"Phython", "lang2" => "Javascript"}
-    print language
-    puts
-    language.delete_if { |num, language| language == "Phython" }
-    print language
-    puts
-end
-
-
-delete_method
-
-
 
 #2. A method that filters a data structure for only items 
-# that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
+#   that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
 
 def filter_method
 puts  "Filter Method- array"
