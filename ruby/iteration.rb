@@ -81,41 +81,20 @@ filter_method
 
 #3.  A different method that filters a data structure 
 #    for only items satisfying a certain condition -- Ruby offers several options!
-
 def filter_new_method
-    puts  "Filter Method- array"
-    a = [10,20,30,40,50]
-    new_num = a.find_all do|n|
-        n > 15
-    end
-    print new_num
-    puts  "Filter Method- hash \n"
-    a = {ten: 10,twenty: 20,thirty: 30,fourty: 40,five: 50}
-    new_num = a.find_all do|num, value|
-        value > 15
-    end
-    print new_num
-
-end
-
-filter_new_method
-
-
-def filter_new_method
-    p  "Filter Method- array"
+    p  "Filter Method- array - above 15"
     a = [10,20,30,40,50]
     p "array is: #{a}"
     new_num = a.find_all do|n|
         n > 15
     end
-    print new_num
-    puts  "Filter Method- hash \n"
+    puts new_num
+    puts  "Filter Method- hash -above 15"
     a = {ten: 10,twenty: 20,thirty: 30,fourty: 40,five: 50}
-    p "hash is: #{hash}"
     new_num = a.find_all do|num, value|
         value > 15
     end
-    print new_num
+    puts new_num
 end
 filter_new_method
 
@@ -123,16 +102,16 @@ filter_new_method
 #then stops (you may not find a perfectly working option for the hash, and that's okay).
 
 # delete elements of array, until meets a number that is even.  then stops
-  
-def until_method
-    puts "Implementing Array"
+  def until_method
+    puts "Implementing Array - deleating until reach even number"
     test_num = [1, 13, 15, 20, 21, 50]
+    p "Array is: #{test_num}"
     result = test_num.drop_while { |i| i%2 ==1 }
-    p result
+    p " result is: #{result}"
     puts "Implementing hash"
     test_num_hash = {one: 1, two: 2, three: 3, four: 4, five:5 }
+    puts "the hash is: #{test_num_hash}"
     result = test_num_hash.drop_while { |key, value| value%2==1 }
-    p result
+    p "the result is: #{result}"
 end
 until_method
-   
