@@ -32,16 +32,24 @@
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
+"The case of the disappearing last letter".delete"r"
+"The case of the disappearing last letter".delete!"r"
+"The case of the disappearing last letter".chop
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
+"The mystery of the missing first letter".reverse.chop.reverse 
+"The mystery of the missing first letter".slice!(1.."The mystery of the missing first letter".length)
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
+"Elementary,    my   dear        Watson!".gsub(/\s+/, ' ')
 
 # "z".<???>
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+"z".ord 
 
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
+"How many times does the letter 'a' appear in this string?".downcase.count"a"
