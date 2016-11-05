@@ -13,19 +13,28 @@ Church = {
     ]
   },  
 
-  pastors: [
-      Dave: {
+  pastors: {
+      dave: {
         kids: 3,
-        worship_ld: TRUE,
+        worship_leader: TRUE,
         degree: TRUE
       },
-      Samantha: {
+      samantha: {
         kids: 0,
-        worship_ld: FALSE,
-        degree: TRUE
+        worship_leader: FALSE,
+        degree: FALSE
       }
-  ]
+  }
 }  
 
 p Church[:worship][:instuments][:guitars]
 Church[:worship][:sunday_school].reverse_each {|x| print x, ",  "}
+puts "All about pastor Dave: #{Church[:pastors][:dave][:worship_leader] } !"
+if Church[:pastors][:samantha][:degree] == TRUE
+  p "Our leader done B educated!"
+end
+if Church[:pastors][:samantha][:degree].eql?(Church[:pastors][:dave][:degree] )
+  p "both have degrees"
+else
+  p "only one has degrees"
+end
