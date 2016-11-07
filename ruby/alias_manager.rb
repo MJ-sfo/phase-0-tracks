@@ -1,12 +1,17 @@
 # pseudocode 
 # input spy's name
-# move values up one value
+# move vowels up one value
 # move consonants up one value
 # split name into  array
 # reverse order of array
 # contingate array into string, with spaces-- "foo" + "bar" + "foobar"
-p "What name are we changing today?"
+real_name=""
+while real_name.downcase != "quit"
+p "What name are we changing today? (if you are finished, please enter 'quit'."
 real_name = gets.chomp
+if real_name.downcase == "quit"
+  break
+end
 
 stringarray = real_name.split("")
 vowels_notcaps = ['a', 'e', 'i', 'o', 'u']
@@ -58,6 +63,12 @@ new_name = stringarray.each_with_index.map{|letter, index|
     else
       letter
     end
-  }    
+  }  
+
 real_name = new_name.join("")
+words = real_name.split(/\W+/)
+words = words.reverse
+real_name = words.join(" ")
 p real_name
+    
+end
