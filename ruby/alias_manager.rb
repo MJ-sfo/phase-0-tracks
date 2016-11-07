@@ -77,7 +77,10 @@ while real_name.downcase != "quit"
   words = words.reverse
   real_name = words.join(" ")
   puts "Agents new name is: #{ real_name}"
-  spy_name[:orignial_name] = enter_name
-  spy_name[:alias_name] = real_name
+  spy_name[:orignial_name].push(enter_name)
+  spy_name[:alias_name].push(real_name)
 end
-p spy_name
+
+spy_name.each do |key, value|
+   puts "Agent #{key} is also known as #{value}."
+   end
