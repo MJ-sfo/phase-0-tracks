@@ -84,24 +84,18 @@ change(grocory_list, "Ice_Cream", 1)
 print1(grocory_list)
 
 
-=begin
-Create a new list
-Add the following items to your list
-Lemonade, qty: 2
-Tomatoes, qty: 3
-Onions, qty: 1
-Ice Cream, qty: 4
-Remove the Lemonade from your list
-Update the Ice Cream quantity to 1
-Print out your list (Is this readable and nice looking)?
-=end
-#   p "------------"
-#  list_hash.each_pair do |k,v| #k and v class as in hash
-#    p "#{k}=#{v}"
-#
-#  end 
-#end
+# Release 4: Reflect
+#On your own, add a commented reflection section to your gps2_2.rb file. Answer the following questions in your reflection:
 
-#print1(new_hash)
-
-#p new_hash
+#What did you learn about pseudo-code from working on this challenge?
+#Always remember to do pseudo-code, before rushing to coding.  Forces you know where going before write first step.
+#What are the trade-offs of using arrays and hashes for this challenge?
+#We didn’t even try array.  So much info was paired, we went straight to hash.
+#What does a method return?
+#In hash, automatically returns the updated hash.  Otherwise, have to type “return” to give back data.
+#What kind of things can you pass into methods as arguments?
+#We entered hashes, texts, keys, numbers representing quantities.
+#How can you pass information between methods?
+#Hash seems to be read globally.  So information goes back out to hash used in parameter when calling a method.  But one method can return info to a variable outside method, which can be used as parameter in another method.
+#What concepts were solidified in this challenge, and what concepts are still confusing?
+#The class each_pair { |name, value| } → Hash was useful.  More practice in working in pairs  - listening, and giving feedback.  Updating pairs in hash without colon, if key is text and pair is a number.  
