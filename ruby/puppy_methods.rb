@@ -32,13 +32,10 @@ puts "our puppy is really #{try_it.dog_years(2)} years old"
 try_it.sit
 
 
-#initialize is called when the instance was generated.
-#If the name of the initialize method is misspelled, the method doesn't run when the instance was generated.
-
+# Release 1: Declare an Initialize Method
 class Turtle
   attr_accessor :size
   def initialize
-    # puts "generated instance!"
   end
 
   def mysize
@@ -49,11 +46,12 @@ class Turtle
   def scare
     puts "afraid of height!!"
   end
-
 end
+#initialize is called when the instance was generated.
+#If the name of the initialize method is misspelled, the method doesn't run when the instance was generated.
 
+#Release 2: Write Your Own Class, and Experiment!
 instance_array = []
-
 50.times do |number|
   instance_array << Turtle.new
 end
