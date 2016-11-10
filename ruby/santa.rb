@@ -16,10 +16,10 @@ end
 
 # Release 1: Give Santa Attributes for Christmas
 class Santa
-  def example_genders(gender)
+  def flex_gender(gender)
     @gender = gender
   end
-  def example_ethnicities(ethnct)
+  def ethnicity(ethnct)
     @ethnct = ethnct
   end
   reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -32,10 +32,9 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 example_genders.length.times do |i|
-#  santas << Santa.new(example_genders[i], example_ethnicities[i])
   temp_santa = Santa.new
-  temp_santa.example_genders(example_genders[i])
-  temp_santa.example_ethnicities(example_ethnicities[i])
+  temp_santa.flex_gender(example_genders[i])
+  temp_santa.ethnicity(example_ethnicities[i])
   santas << temp_santa
 end
 p santas
