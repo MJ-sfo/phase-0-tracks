@@ -15,7 +15,13 @@ def print_santa
 end
 
 # Release 1: Give Santa Attributes for Christmas
+# Release 2: Change an Attribute with a Method
 class Santa
+  attr_accessor :age, :celebrate_birthday
+  def initialize
+    @age = 0  
+    @celebrate_birthday = age + 1
+  end
   def flex_gender(gender)
     @gender = gender
   end
@@ -23,8 +29,13 @@ class Santa
     @ethnct = ethnct
   end
   reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  age = 0 
+
+
 end
+
+add_year = Santa.new.celebrate_birthday
+puts "Santa is now #{add_year}."
+puts "------------"
 
 #  initialization code 
 santas = []
@@ -33,8 +44,7 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 
 example_genders.length.times do |i|
   temp_santa = Santa.new
-  temp_santa.flex_gender(example_genders[i])
-  temp_santa.ethnicity(example_ethnicities[i])
+  puts "this Santa calls themself #{temp_santa.flex_gender(example_genders[i])} and #{temp_santa.ethnicity(example_ethnicities[i])}."
   santas << temp_santa
 end
 p santas
@@ -49,7 +59,8 @@ class Reindeer
   end
 end
 
+puts "-----------"
 reindeer = Reindeer.new("Blitzen")
-p reindeer
+p reindeer.name
 reindeer.name = "Tiny"
-puts "our russian deer's name is now #{Reindeer.name}"
+puts "our deer's name is now #{Reindeer.name}"
