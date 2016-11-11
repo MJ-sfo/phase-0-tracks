@@ -38,3 +38,18 @@ example_genders.length.times do |i|
   santas << temp_santa
 end
 p santas
+
+# Release 2: Change an Attribute with a Method
+class Reindeer
+  attr_accessor(:name)
+  #first make Attribute
+  #then include Attribute in initialize
+  def initialize(name)
+    @name = name
+  end
+end
+
+reindeer = Reindeer.new("Blitzen")
+p reindeer
+reindeer.name = "Tiny"
+puts "our russian deer's name is now #{Reindeer.name}"
