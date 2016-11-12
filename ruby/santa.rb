@@ -16,9 +16,10 @@ end
 
 # Release 1: Give Santa Attributes for Christmas
 # Release 2: Change an Attribute with a Method
+# Release 3: Refactor with attr_reader and attr_accessor
 class Santa
-  attr_accessor :age,  :reindeer_ranking
-  attr_reader :gender
+  attr_accessor :reindeer_ranking
+  attr_reader :gender, :ethnct, :age
   def initialize
     @age = 0  
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -31,8 +32,7 @@ class Santa
   def ethnicity(ethnct)
     @ethnct = ethnct
   end
-#  reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  
+
   def celebrate_birthday 
   @age = @age +1 
   end
@@ -43,7 +43,11 @@ class Santa
     @reindeer_ranking << bad_boy
     p @reindeer_ranking
   end
+  
+  def new_age(random_age)
+    @age = random_age
   end
+end
 
 #  initialization code 
 santas = []
@@ -67,7 +71,9 @@ puts "Santa is now #{santa.gender}."
 puts santa.reindeer_ranking
 santa.get_mad_at("Dasher")
 
-
+# Release 4: Build Many, Many Santas
+puts "Brand new Santa is #{santa.flex_gender(example_genders[rand(7)-1])}, #{santa.ethnicity(example_ethnicities[rand(7)-1])}, and #{santa.new_age(rand(120))} years old !"
+# now needs a loop to do 100 times
 
 
 class Reindeer
