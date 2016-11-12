@@ -72,9 +72,10 @@ puts santa.reindeer_ranking
 santa.get_mad_at("Dasher")
 
 # Release 4: Build Many, Many Santas
-puts "Brand new Santa is #{santa.flex_gender(example_genders[rand(7)-1])}, #{santa.ethnicity(example_ethnicities[rand(7)-1])}, and #{santa.new_age(rand(120))} years old !"
 # now needs a loop to do 100 times
-
+65.times do |i|
+  puts "Brand new Santa is #{santa.flex_gender(example_genders[rand(7)-1])}, #{santa.ethnicity(example_ethnicities[rand(7)-1])}, and #{santa.new_age(rand(120))} years old !"
+end
 
 class Reindeer
   attr_accessor(:name)
