@@ -74,7 +74,7 @@ santa.get_mad_at("Dasher")
 # Release 4: Build Many, Many Santas
 # now needs a loop to do 100 times
 65.times do |i|
-  puts "Brand new Santa is #{santa.flex_gender(example_genders[rand(7)-1])}, #{santa.ethnicity(example_ethnicities[rand(7)-1])}, and #{santa.new_age(rand(120))} years old !"
+  puts "Brand new Santa is #{santa.flex_gender(example_genders[rand(7)])}, #{santa.ethnicity(example_ethnicities[rand(7)])}, and #{santa.new_age(rand(141))} years old !"
 end
 
 class Reindeer
