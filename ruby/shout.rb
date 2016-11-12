@@ -5,9 +5,10 @@ module Shout
   def self.yell_angrily(words)
     words + "!!!" + " :("
   end
-#  def self.yelling_happily(words)
- #   words + "amen!!!" + " :)" 
-  #end 
+  def self.yelling_happily(words)
+    words + "   amen!!!" + " :)" 
+  end 
 end
 
-Self.yell_angrily "I like cheese"
+p Shout.yell_angrily "I like cheese"
+p Shout.yelling_happily "We won the House"

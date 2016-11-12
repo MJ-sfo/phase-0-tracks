@@ -17,20 +17,23 @@ end
 # Release 1: Give Santa Attributes for Christmas
 # Release 2: Change an Attribute with a Method
 class Santa
-  attr_accessor :age, :celebrate_birthday
+  attr_accessor :age 
   def initialize
     @age = 0  
-    @celebrate_birthday = age + 1
   end
+  
   def flex_gender(gender)
     @gender = gender
   end
+  
   def ethnicity(ethnct)
     @ethnct = ethnct
   end
   reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-
-
+  
+   def celebrate_birthday 
+  @age = @age +1 
+  end
 end
 
 add_year = Santa.new.celebrate_birthday
@@ -49,10 +52,11 @@ example_genders.length.times do |i|
 end
 p santas
 
+
 # Release 2: Change an Attribute with a Method
 class Reindeer
   attr_accessor(:name)
-  #first make Attribute
+  #first make   
   #then include Attribute in initialize
   def initialize(name)
     @name = name
