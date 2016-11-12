@@ -18,6 +18,7 @@ end
 # Release 2: Change an Attribute with a Method
 class Santa
   attr_accessor :age 
+  attr_reader :gender
   def initialize
     @age = 0  
   end
@@ -31,14 +32,10 @@ class Santa
   end
   reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   
-   def celebrate_birthday 
+  def celebrate_birthday 
   @age = @age +1 
   end
-end
-
-add_year = Santa.new.celebrate_birthday
-puts "Santa is now #{add_year}."
-puts "------------"
+  end
 
 #  initialization code 
 santas = []
@@ -52,8 +49,15 @@ example_genders.length.times do |i|
 end
 p santas
 
-
 # Release 2: Change an Attribute with a Method
+puts "------------"
+add_year = Santa.new.celebrate_birthday
+puts "Santa is now #{add_year}."
+santa  = Santa.new
+santa.flex_gender("MALE")
+puts "Santa is now #{santa.gender}."
+
+
 class Reindeer
   attr_accessor(:name)
   #first make   
