@@ -1,3 +1,4 @@
+# Release 1: Write a Simple Module
 module Shout
   def initialize
     @self = ""
@@ -6,7 +7,7 @@ module Shout
     words + "!!!" + " :("
   end
   def self.yelling_happily(words)
-    words + "   amen!!!" + " :)" 
+    words + " amen!!!" + " :)" 
   end 
 end
 
