@@ -39,6 +39,11 @@ require_relative 'dancer'
     expect(dancer.card).to eq ["Anna Pavlova"]
   end
 
+  #because of time, i am adding simple test - leap
+  it "leaps" do
+    expect(dancer.movement).to eq "leap"
+  end
+
 end
 
 

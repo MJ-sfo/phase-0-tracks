@@ -7,6 +7,7 @@ class Dancer
     @partners = []
     @statement
     @dancing_partner
+    @movement = "leap"
   end
 
   def name
@@ -36,5 +37,9 @@ class Dancer
   def begin_next_dance
     @dancing_partner = @partners.shift 
     @statement =  "Now dancing with " +  @dancing_partner + "."
+  end
+
+  def movement 
+    @movement 
   end
 end
