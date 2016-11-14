@@ -3,6 +3,7 @@ class Dancer
     @name = name_input
     @age = age
     @dance_type
+    @final
   end
 
   def name
@@ -15,5 +16,9 @@ class Dancer
 
   def pirouette
     @dance_type = "*twirls*"
+  end
+
+  def bow
+    @final = "*bows*"
   end
 end
