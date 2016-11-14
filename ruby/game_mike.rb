@@ -14,3 +14,22 @@
 #4 What would you have to change if you wanted to limit how many 
 #guesses the user gets?
 # The While loop changed from true/false dependent, to index that counted how many times went trough the loop - or break the loop when guesses hit a maximum.
+
+# Release 1: Design a Game
+# build a class
+# initiate word as null, length as 0, guesses as empty array, word_array as empty array (will be filled with underscores)
+# module - counts length of word, fills  word_array with underscores
+# module response - taunt and congrats
+
+# ask player for word
+# loop  - ask second player for guess - word or letter
+# give player underscores, one for each letter in word
+# count number of guesses, max number loops based on length of word, keep track of guesses
+# when get letter in word, replace underscores with letter
+# compare guesses with previews guesses, 
+# if 2nd player repeats the guess, tell them so, repeat without counting number or increasing loop index
+#   increase index
+#   if fill all letters or gives correct word, give congrats
+#     if wrong guess, give taunt
+#       repeat loop
+
