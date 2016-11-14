@@ -1,7 +1,7 @@
 class Dancer
-  def initialize(name_input, age_input)
+  def initialize(name_input, age) 
     @name = name_input
-    @age = age_input
+    @age = age
   end
 
   def name
