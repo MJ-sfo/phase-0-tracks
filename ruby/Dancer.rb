@@ -5,7 +5,7 @@ class Dancer
     @dance_type
     @final
     @partners = []
-    @statement
+    @statement                  
     @dancing_partner
     @movement = "leap"
   end
