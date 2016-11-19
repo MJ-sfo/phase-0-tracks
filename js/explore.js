@@ -6,3 +6,9 @@
 // create a loop - half length of text 
 // take first character, put into holding-variable, put last character in first place
 // put first character in last place
+var nonReverse = "";
+function reverse(nonReverse) {
+  var characters = (nonReverse.length/2);
+  console.log("length of word is " + nonReverse.length + "and half is: " + characters); 
+}
+reverse("testing");
