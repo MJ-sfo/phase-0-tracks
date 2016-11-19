@@ -8,7 +8,8 @@
 // put first character in last place
 var nonReverse = "";
 function reverse(nonReverse) {
-  var characters = (nonReverse.length/2);
-  console.log("length of word is " + nonReverse.length + "and half is: " + characters); 
+  / math.floor rounds DOWN to closest integer
+  var characters = Math.floor(nonReverse.length / 2);
+  console.log("length of word is " + nonReverse.length + " and half is: " + characters); 
 }
-reverse("testing");
+reverse("y");
