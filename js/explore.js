@@ -11,9 +11,9 @@ function reverse(nonReverse) {
   // math.floor rounds DOWN to closest integer
   var num_characters = Math.floor(nonReverse.length / 2);
   var length_word = nonReverse.length
-  var hold_letter = ""
   var newWord = nonReverse
   console.log("length of word is " + length_word + " and half is: " + num_characters); 
+  
   for (i = 0; i < num_characters; i++) {
     var first_letter = nonReverse[i];
     var last_letter = nonReverse[length_word-i-1];
@@ -26,6 +26,10 @@ function reverse(nonReverse) {
     nonReverse = nonReverse.replaceAt(i, last_letter);
     nonReverse = nonReverse.replaceAt((length_word-i-1), first_letter);
   };  // for loop - only runs iftext has more than one letter
-  console.log("the reorginized word is: " + nonReverse);
+  
+  // only prints if input is longer than one letter
+  if (nonReverse.length > 1) {
+    console.log("the reorginized word is: " + nonReverse);  
+  };
 }
-reverse("Mike");  // any loop must make sure that length is greater than one
+reverse("Susan");  
