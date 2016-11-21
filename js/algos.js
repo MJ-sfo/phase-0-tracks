@@ -24,10 +24,16 @@ function longest_word(array_list) {
         }; // end if if - only does if new item is longer
       };  // end of for loop - compare item by item
     };          // end of if condition - no comparison if array has less than two items
-  
 
-  console.log("the item " + thing + " is " + item_length + " characters long." )
+  console.log("the longest item " + thing + " is " + item_length + " characters long." )
 }   // end of functio
 
-var test_array = [ "Sammie", "life", "Davids home" ];
-longest_word(test_array);
+var test_array1 = [ "Sammie", "life", "Davids home" ];
+var test_array2 = ["me", "he", "Jack Robertson", "I"];
+var test_array3 = ["Four score and seven years ago..."]
+longest_word(test_array1);
+console.log("---------");
+longest_word(test_array2);
+console.log("---------");
+longest_word(test_array3);
+console.log("---------");
