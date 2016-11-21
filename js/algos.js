@@ -56,11 +56,12 @@ function add_to_array(num_items)  {
   var arr_build = [];
  
   // this loop builds rand word with random number of letters
- for (i = 0; i <3; i++) {
+ for ( i=0; i <num_items; i++) {
+// for (var i = 0; i < name_array.length; i++){
     var num_loop = Math.floor(Math.random()*9);   // random number 0-9
     var word_build = "";
     
-    for(i=0; i<num_items; i++){
+    for(i=0; i<num_loop; i++){
       var rand_num = Math.floor(Math.random()*25); // picks random number 0-25
       word_build = word_build + alphabet[Math.floor(Math.random()*25)];
       console.log("the word is now: "+ word_build + ", for loop: "+ i);
