@@ -37,3 +37,15 @@ longest_word(test_array2);
 console.log("---------");
 longest_word(test_array3);
 console.log("---------");
+
+// Release 1: Find a Key-Value Match
+// write a function that takes two objects
+
+// Release 2: Generate Random Test Data
+// Generate Random letter - get Random number 0-25, pull out of array of alphabet
+// Generate Random number 1-10 - this is for loop, to build Random word out of Random letters 1-10 characters
+// build function that accepts number parameter.
+// creates new array, null length
+// if parameter > 0, goes into loop number of times of parameter
+//   each loop - builds Random word of Random length
+// push new word into array
