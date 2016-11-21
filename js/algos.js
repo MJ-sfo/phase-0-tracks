@@ -10,8 +10,12 @@
 // driver code, that tests several arrays
 
 function longest_word(array_list) {
-  console.log(array_list.length)
+  console.log("the array contains: " + array_list);
+  console.log("this array contains "  + array_list.length + " letters.");
+  // var item = array_list[0];
+  // var item_length = array_list[0].item_length;
+  console.log("the item " + array_list[0] + " is " + array_list[0].length + " characters long." )
 }
 
-test_array = ["help", "life", "David's home"];
+var test_array = [ "help", "life", "Davids home" ];
 longest_word(test_array);
