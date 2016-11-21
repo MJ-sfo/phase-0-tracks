@@ -49,3 +49,21 @@ console.log("---------");
 // if parameter > 0, goes into loop number of times of parameter
 //   each loop - builds Random word of Random length
 // push new word into array
+
+var rand_num = Math.floor(Math.random()*25); // picks random number 0-25
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w', 'x','y','z'];
+console.log(rand_num);
+console.log("the random number "+ rand_num + " is equal to letter: " + alphabet[rand_num]);
+console.log("-------------");
+var num_loop = Math.floor(Math.random()*9);   // random number 0-9
+var word_build = "";
+var arr_build = [];
+ 
+ // this loop builds rand word with random number of letters
+  for(i=0; i<num_loop; i++){
+    var rand_num = Math.floor(Math.random()*25); // picks random number 0-25
+  word_build = word_build + alphabet[Math.floor(Math.random()*25)];
+  console.log("the word is now: "+ word_build + ", for loop: "+ i);
+  };
+  arr_build.push(word_build);
+  console.log("the array now contains: "+ arr_build);
