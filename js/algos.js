@@ -11,11 +11,23 @@
 
 function longest_word(array_list) {
   console.log("the array contains: " + array_list);
-  console.log("this array contains "  + array_list.length + " letters.");
-  // var item = array_list[0];
-  // var item_length = array_list[0].item_length;
-  console.log("the item " + array_list[0] + " is " + array_list[0].length + " characters long." )
-}
+  console.log("this array contains "  + array_list.length + " items.");
+  var thing = array_list[0];
+  var item_length = array_list[0].length;
+  console.log("the first item " + thing + " is " + item_length + " characters long." )
+  
+    if (array_list.length > 1) {
+      for (i = 1; i < array_list.length; i++) {
+        if (item_length < array_list[i].length ) {
+          item_length = array_list[i].length;
+          thing = array_list[i];
+        }; // end if if - only does if new item is longer
+      };  // end of for loop - compare item by item
+    };          // end of if condition - no comparison if array has less than two items
+  
 
-var test_array = [ "help", "life", "Davids home" ];
+  console.log("the item " + thing + " is " + item_length + " characters long." )
+}   // end of functio
+
+var test_array = [ "Sammie", "life", "Davids home" ];
 longest_word(test_array);
