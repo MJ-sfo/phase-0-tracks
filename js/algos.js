@@ -26,7 +26,8 @@ function longest_word(array_list) {
     };          // end of if condition - no comparison if array has less than two items
 
   console.log("the longest item " + thing + " is " + item_length + " characters long." )
-}   // end of functio
+  return thing;
+}   // end of function
 
 var test_array1 = [ "Sammie", "life", "Davids home" ];
 var test_array2 = ["me", "he", "Jack Robertson", "I"];
@@ -50,32 +51,31 @@ console.log("---------");
 //   each loop - builds Random word of Random length
 // push new word into array
 
-function add_to_array(num_items)  {
-  
+// part 2
+// set function to 10, make function equal to variable
+// set new variable - first function with array received from last function
+// print final result
+
+function add_to_array(num_items)  {  
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w', 'x','y','z'];
-  var arr_build = [];
- 
+  var arr_build = []; 
   // this loop builds rand word with random number of letters
- for ( i=0; i <num_items; i++) {
-// for (var i = 0; i < name_array.length; i++){
+ for ( index = 0; index <num_items; index++) {
     var num_loop = Math.floor(Math.random()*9);   // random number 0-9
     var word_build = "";
-    
     for(i=0; i<num_loop; i++){
       var rand_num = Math.floor(Math.random()*25); // picks random number 0-25
       word_build = word_build + alphabet[Math.floor(Math.random()*25)];
-      console.log("the word is now: "+ word_build + ", for loop: "+ i);
     };    //  end loop  that builds random word
     
     arr_build = arr_build.concat(word_build);
-    console.log("the array now contains: "+ word_build);
-    console.log("------");
   };      //  end for-loop that builds long array
+  console.log("We built array of: " + arr_build);
   console.log("------");
-  console.log("------");
-  console.log("The final array is: ");
-  console.log(arr_build);
   return arr_build;
 }   // end of function
 
-console.log(add_to_array(3));
+console.log("------");
+var build_array = add_to_array(10);
+var longest_word_in_array = longest_word(build_array);
+console.log("The longest random word in array is: " + longest_word_in_array);
