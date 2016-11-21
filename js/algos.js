@@ -41,6 +41,19 @@ console.log("---------");
 
 // Release 1: Find a Key-Value Match
 // write a function that takes two objects
+// i find this question  unclear. The two objects each have two items, and we test if each have an item that matches, or a key that matches?
+// set value as false
+// test first value of first object with first value of second object to see if equal
+// do same for second item, then second item of first object.
+// if ever find match, set value to true
+// write driver code to test
+function find_keyvalue_match(hash1, hash2) { 
+  var doesitmatch = false;
+  return doesitmatch;
+}
+Object1 = {name: "Steven", age: 54};
+Object2 = {name: "Tamir", age: 54};
+console.log("the answer to finding a match is: " + find_keyvalue_match(Object1, Object2));
 
 // Release 2: Generate Random Test Data
 // Generate Random letter - get Random number 0-25, pull out of array of alphabet
