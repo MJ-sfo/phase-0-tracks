@@ -11,10 +11,12 @@
 "zom".insert(2, "o")
 # => “zoom”
 
-# "enhance".<???>
+"enhance".ljust(11).rjust(15)   
+"enhance".ljust("enhance".length + 4).rjust("enhance".length + 8)
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
+"Stop! You’re under arrest!".upcase!
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
