@@ -25,6 +25,10 @@
 # "the usual".<???>
 #=> "the usual suspects"
 
+" suspects".insert(0,"the usual") 
+" suspects".replace"the usual suspects"
+" suspects".gsub(/[' ']/, 'the usual ')  
+" suspects".gsub!(/[' ']/, 'the usual ')  
 # " suspects".<???>
 # => "the usual suspects"
 
