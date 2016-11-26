@@ -16,12 +16,15 @@ input = ""
 for key in client.keys.sort
   if key.to_s == "paid_advanced"
     puts "Will you pay for this in advanced (y/n)?"
-    input = gets.chomp
-    p input
+    input = gets.chomp.strip.downcase
+    if input[0] == "y"
+      client[:key] = true
+    end
   else
     puts "What do you wish to enter for #{(key.inspect).reverse.chop.reverse }?"  # .reverse.chop.reverse is to remove colon
     input = gets.chomp
     p input
   end
 end
+puts "#{client}"
 
