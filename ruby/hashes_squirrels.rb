@@ -7,15 +7,21 @@
 # ask user for any key the paired value the user wants the value changed
 # convert input string for key into symbol for key.
 # change new input for that key
+
 # when user marks "none" stop, print updated hash
-client = {
-  name: "",
-  age:  0,
-  number_kids: 0,
-  decor: "",
-  paid_advanced: false
-}
-client.each |key, data|
-  puts client[:key]
-  
+# client.each do |key, data|    # this prints VALUES
+#   puts "What do you wish to enter for #{client[key]}?"
+# end
+input = ""
+for key in client.keys.sort
+  if key.to_s == "paid_advanced"
+    puts "Will you pay for this in advanced (y/n)?"
+    input = gets.chomp
+    p input
+  else
+    puts "What do you wish to enter for #{(key.inspect).reverse.chop.reverse }?"  # .reverse.chop.reverse is to remove colon
+    input = gets.chomp
+    p input
+  end
 end
+
