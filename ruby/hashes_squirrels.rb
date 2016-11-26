@@ -7,11 +7,8 @@
 # ask user for any key the paired value the user wants the value changed
 # convert input string for key into symbol for key.
 # change new input for that key
-
 # when user marks "none" stop, print updated hash
-# client.each do |key, data|    # this prints VALUES
-#   puts "What do you wish to enter for #{client[key]}?"
-# end
+
 client = {
   name: "",
   age:  0,
@@ -19,9 +16,7 @@ client = {
   decor: "",
   paid_advanced: false
 }
-# client.each do |key, data|    # this prints VALUES
-#   puts "What do you wish to enter for #{client[key]}?"
-# end
+
 input = ""
 for key in client.keys.sort
   if key.to_s == "paid_advanced"
