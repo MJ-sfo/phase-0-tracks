@@ -8,4 +8,14 @@
 # convert input string for key into symbol for key.
 # change new input for that key
 # when user marks "none" stop, print updated hash
-
+client = {
+  name: "",
+  age:  0,
+  number_kids: 0,
+  decor: "",
+  paid_advanced: false
+}
+client.each |key, data|
+  puts client[:key]
+  
+end
