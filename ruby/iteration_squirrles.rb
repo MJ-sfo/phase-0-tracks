@@ -44,9 +44,21 @@ end
 puts family
 
 # Release 2: Use the Documentation
+names = ['Adam','Bernie','Charlie','Dave']
+attribues = {
+  alice: 'tall',
+  bob: 'fat',
+  cathy: 'guitarist',
+  donnald: 'winner'
+}
 # 1 -  iterates through the items, deleting any that meet a certain condition
 p names
 names.each do |person|
    names.delete_if{|person|person[0].downcase =='b'}
 end
 p names
+p attribues
+attribues.each do |key, value|
+  attribues.delete_if{|key|key.to_s[0].downcase =='b'}
+end
+p attribues
