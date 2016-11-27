@@ -67,3 +67,25 @@ puts "The array is: #{fibonacci(100)}"
 # compare one element with next, switch if second is smaller
 # repeat array until no changes made, then quit
 # 5 - Implement the sorting method in Ruby.
+
+def sort_array(array_input)
+  done = false
+  while done == false
+    done = true
+    
+    index = 0 
+    while index < array_input.length - 1 
+      if array_input[index] > array_input[index+1]
+        done = false
+        placer = array_input[index+1]
+        array_input[index+1] = array_input[index]
+        array_input[index] = placer
+      end    # end if statement
+    index +=1
+    end   # end of while loop
+    
+  end           # while done == false
+  return array_input
+end
+array_to_sort = [0,16,-5,14,212121,2]
+sort_array(array_to_sort)
