@@ -54,3 +54,16 @@ end
 
 puts "The array is: #{fibonacci(100)}"
 # 100th position is: 218922995834555169026
+
+# Release 2: Sort an Array
+# 1 - Choose a simple sorting algorithm to learn about
+# sort numbers, by bubble-method
+# 2 - Form a conceptual understanding of how the algorithm works.
+# should be able to turn number into string, sort by lenght of string (break string into array of characters? )
+# 3- Notice your emotional state as you tackle this algorithm:
+# one fustrating part of tacking anything in programing is trying to self-digagnose my own emotional state.  I've got enough work to do in finding a solution.  Let's get 'er done !
+# 4 - Pseudocode a sorting method that takes an array of integers and uses a sorting algorithm. 
+# loop through array 
+# compare one element with next, switch if second is smaller
+# repeat array until no changes made, then quit
+# 5 - Implement the sorting method in Ruby.
