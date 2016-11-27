@@ -9,11 +9,15 @@
 # else - if edge letter change to b, else move up one letter in consonant
 # finally - join array into one words
 
-name = "Felicia Torres" 
+name = "Felicia TorresU" 
 name_array = name.split('')
 name_array = name_array.reverse
 name_backwords = name_array.join('')
-p name_backwords
+puts "The name revsed is: #{name_backwords}."
 
-name_arra = name_backwords.downcase.split('')
-p name_arra
+name_backwords = name_backwords.gsub(/[aeiou]/, 'a'=>'e', 'e'=>'i', 'i'=>'o', 'o'=>'u', 'u'=>'a')
+name_backwords = name_backwords.gsub(/[AEIOU]/, 'A'=>'E', 'E'=>'I', 'I'=>'O', 'O'=>'U','U'=>'A')
+name_backwords = name_backwords.gsub(/[bcdfghjklmnpqrstvwxyz]/, 'b'=>'c', 'c'=>'d', 'd'=>'f', 'f'=>'g', 'g'=>'h', 'h'=>'j', 'j'=>'k', 'k'=>'l', 'l'=>'m', 'm'=>'n', 'n'=>'p', 'p'=>'q', 'q'=>'r', 'r'=>'s', 's'=>'t', 't'=>'v', 'v'=>'w', 'w'=>'x', 'x'=>'y', 'y'=>'z', 'z'=>'b' )
+name_backwords = name_backwords.gsub(/[BCFGHJKLMNPQRSTVWXYZ]/,'B'=>'C','C'=>'D','D'=>'F','F'=>'G','G'=>'H','H'=>'J','J'=>'K','K'=>'L','L'=>'M','M'=>'N','N'=>'P','P'=>'Q','Q'=>'R','R'=>'S','S'=>'T','T'=>'V','V'=>'W','W'=>'X','X'=>'Y','Y'=>'Z','Z'=>'B' )
+
+puts "The name with letters reversed is: #{name_backwords}."
