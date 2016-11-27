@@ -14,3 +14,5 @@ puts family[:uncle]
 p "--------------------"
 puts "My Uncle Dick has the largest family: #{family[:uncle][2]}"
 family[:aunt]
+p "--------------------"
+family[:aunt].reverse_each {|x| print x, ",  "}
