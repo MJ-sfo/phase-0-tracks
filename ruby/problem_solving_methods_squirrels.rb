@@ -32,3 +32,25 @@ puts "we found the integer at #{find_integer(use_this_array, 5 )} spot in array"
 #   integer 0,1,2 return prest array
 #   loop - three through length array - push new item, sum of last two items of array
 #   return final array 
+
+def fibonacci(lngth)
+  lngth = lngth.to_i.floor
+  puts "the lenght of array is: #{lngth}"
+  fib_array = []
+  if lngth < 0 
+    puts "Needs a non-negative number"
+  elsif lngth == 1
+    fib_array = [0]
+  else # lngth == 2
+    fib_array = [0, 1]
+    index = 3
+    while index <= lngth
+      fib_array.push(fib_array[index-3] + fib_array[index-2])
+      index +=1 
+    end
+  end
+  return fib_array
+end
+
+puts "The array is: #{fibonacci(100)}"
+# 100th position is: 218922995834555169026
