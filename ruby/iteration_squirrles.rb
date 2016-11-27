@@ -62,3 +62,38 @@ attribues.each do |key, value|
   attribues.delete_if{|key|key.to_s[0].downcase =='b'}
 end
 p attribues
+
+# 2 -  filters a data structure for only items that do satisfy a certain condition
+p names
+names.each do |person|
+   names.delete_if{|person|person[0].downcase < 'c'}
+end
+p names
+
+p attribues
+attribues.each do |key, value|
+  attribues.delete_if{|key|key.to_s[0].downcase <'b'}
+end
+p attribues
+
+# 3 - different method that filters a data structure
+p names
+names.map do |person|
+   names.delete_if{|person|person[0].downcase < 'c'}
+end
+p names
+
+p attribues
+attribues.map do |key, value|
+  attribues.delete_if{|key|key.to_s[0].downcase <'b'}
+end
+p attribues
+
+#4 - method that will remove items from a data structure until the condition in the block evaluates to false
+p names
+less_names = names.drop_while { |i| i[0].downcase  < 'c' } 
+p less_names
+p "------------------"
+p attribues
+less_attribues = attribues.drop_while { |i, value| i[0].downcase  < 'c' } 
+p less_attribues
