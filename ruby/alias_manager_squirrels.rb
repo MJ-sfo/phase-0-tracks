@@ -13,10 +13,16 @@
 # set var as false, start loop as long as false
 # ask for name, set to var name
 # if name is 'quit', set var as true
-#   esle - change name
+#   else - change name
 # end loop
 
+# Release 2: Store the Aliases
+# create hash before loop
+# end of else statement, push old name as key and new name as value into hash
+# when finish loop, make a .each loop that prints key, value in text statement
+
 loop = false
+all_names = {}
 while loop == false
   puts "What name do you want changed? (type 'quit' if done)"
   name = gets.chomp.strip 
@@ -26,7 +32,6 @@ while loop == false
     name_array = name.split('')
     name_array = name_array.reverse
     name_backwords = name_array.join('')
-    puts "The name revsed is: #{name_backwords}."
     
     name_backwords = name_backwords.gsub(/[aeiou]/, 'a'=>'e', 'e'=>'i', 'i'=>'o', 'o'=>'u', 'u'=>'a')
     name_backwords = name_backwords.gsub(/[AEIOU]/, 'A'=>'E', 'E'=>'I', 'I'=>'O', 'O'=>'U','U'=>'A')
@@ -34,5 +39,7 @@ while loop == false
     name_backwords = name_backwords.gsub(/[BCFGHJKLMNPQRSTVWXYZ]/,'B'=>'C','C'=>'D','D'=>'F','F'=>'G','G'=>'H','H'=>'J','J'=>'K','K'=>'L','L'=>'M','M'=>'N','N'=>'P','P'=>'Q','Q'=>'R','R'=>'S','S'=>'T','T'=>'V','V'=>'W','W'=>'X','X'=>'Y','Y'=>'Z','Z'=>'B' )
     
     puts "The name with letters reversed is: #{name_backwords}."
+    all_names[name] = name_backwords
   end
 end
+all_names.each {|key, value| puts  "#{key} is actually #{value}." }
