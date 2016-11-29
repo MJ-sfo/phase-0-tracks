@@ -2,9 +2,16 @@
 # defining a Santa class 
 #   three instance methods: speak , eat_milk_and_cookies , initialize 
 
+# Release 1: Give Santa Attributes for Christmas
+# declare at initialization: gender ethnicity reindeer_ranking age
+# set default values for reindeer_ranking & age
+
 class Santa 
-  def initialize
+  def initialize(gend, ethn)
     puts "Initializing Santa instance ..."
+    @gender, @ethnicity = gend, ethn
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0 
   end
 
   def speak
@@ -16,7 +23,7 @@ class Santa
     puts  "That was a good #{eat} cookie !" 
   end
 end
-talking = Santa.new
+talking = Santa.new("male", "green")
 talking.speak
-Santa.new.eat_milk_and_cookies("oats")
+talking.eat_milk_and_cookies("oats")
 
