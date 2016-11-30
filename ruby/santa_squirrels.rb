@@ -78,6 +78,10 @@
 # add attr_reader and attr_accessor
 # remove getter and setter methods 
 
+# Release 4: Build Many, Many Santas
+# build method to randomize gender, ethnicity with rand() method
+# build .times loop to make a hundred Santas
+
 class Santa 
   attr_reader :age, :ethnicity
   attr_accessor :gender
@@ -87,6 +91,8 @@ class Santa
     @gender, @ethnicity = gend, ethn
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0 
+    @possible_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+    @possible_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
   end
 
   def speak
@@ -111,6 +117,14 @@ class Santa
     @reindeer_ranking << bad_reindeer
     # puts "new array is: #{@reindeer_ranking}"
   end
+
+  # for creating random Santas
+  def random_gender
+    @gender = @possible_genders[rand(6)]
+  end
+  def random_ethnicity
+    @ethnicity = @possible_ethnicities[rand(6)]
+  end
 end
 
 talking = Santa.new("male", "green")
@@ -131,3 +145,10 @@ end
 p santas
 talking = Santa.new("non-gender","non-ethnic")
 puts "Santa has #{talking.count_reindeer} reindeer."
+
+# random santas
+100.times do
+  puts "A random Santa is #{talking.random_gender} and ethnically #{talking.random_ethnicity}."
+end
+
+
