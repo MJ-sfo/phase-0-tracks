@@ -15,3 +15,7 @@ module Shout
     puts "Thank you Lord!"
   end
 end
+# Add driver code underneath your module declaration that calls both of your module methods.
+p Shout.yell_angrily("hiya")
+Shout.yelling_happily
+Shout.yell_angrily("once again")
