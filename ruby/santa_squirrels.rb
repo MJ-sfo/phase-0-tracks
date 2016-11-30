@@ -40,13 +40,29 @@ class Santa
     @reindeer_ranking << bad_reindeer
     # puts "new array is: #{@reindeer_ranking}"
   end
-
+  # a setter method --- but also need a getter method, to use outside of class Santa
+  def gender_makenew=(new_gender) 
+    @gender = new_gender
+  end
+  def gender
+    @gender
+  end
+  #  two "getter" methods
+  def age
+    @age
+  end
+  def ethnicity 
+    @ethnicity 
+  end
 end
 talking = Santa.new("male", "green")
 talking.speak
 talking.eat_milk_and_cookies("oats")
 puts talking.get_mad_at("Dancer")
 puts "new age of Santa is #{talking.celebrate_birthday}."
+talking.gender_makenew = "unknown gender"
+puts "Because of expensive operation, Santa is now #{talking.gender}."
+puts "Our Santa is #{talking.ethnicity} and #{talking.age} years old."
 
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
