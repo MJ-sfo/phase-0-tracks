@@ -6,6 +6,10 @@
 # declare at initialization: gender ethnicity reindeer_ranking age
 # set default values for reindeer_ranking & age
 
+# Release 2: Change an Attribute with a Method
+# Add three attribute-changing methods 
+# Add two "getter" methods
+
 class Santa 
   def initialize(gend, ethn)
     puts "Initializing Santa instance ..."
@@ -26,10 +30,23 @@ class Santa
   def count_reindeer 
     count = @reindeer_ranking.length
   end
+  #  Release 2: Change an Attribute with a Method
+  def celebrate_birthday
+    @age = @age + 1        # +=1 
+  end
+  
+  def get_mad_at(bad_reindeer)
+    @reindeer_ranking.delete(bad_reindeer) # not: @reindeer_ranking = @reindeer_ranking.delete(bad_reindeer)
+    @reindeer_ranking << bad_reindeer
+    # puts "new array is: #{@reindeer_ranking}"
+  end
+
 end
 talking = Santa.new("male", "green")
 talking.speak
 talking.eat_milk_and_cookies("oats")
+puts talking.get_mad_at("Dancer")
+puts "new age of Santa is #{talking.celebrate_birthday}."
 
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
