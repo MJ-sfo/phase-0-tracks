@@ -120,10 +120,10 @@ class Santa
 
   # for creating random Santas
   def random_gender
-    @gender = @possible_genders[rand(6)]
+    @gender = @possible_genders[rand(7)]
   end
   def random_ethnicity
-    @ethnicity = @possible_ethnicities[rand(6)]
+    @ethnicity = @possible_ethnicities[rand(7)]
   end
 end
 
