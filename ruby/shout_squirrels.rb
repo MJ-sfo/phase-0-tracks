@@ -6,16 +6,41 @@
 # Shout.yelling_happily       - Class dot method (cap class)
 # exit  - to get out of irb
 
+# module Shout
+#   def self.yell_angrily(words)
+#     words + "!!!" + " :("
+#   end
+
+#   def self.yelling_happily
+#     puts "Thank you Lord!"
+#   end
+# end
+# # Add driver code underneath your module declaration that calls both of your module methods.
+# p Shout.yell_angrily("hiya")
+# Shout.yelling_happily
+# Shout.yell_angrily("once again")
+
+# Release 3: Convert a Standalone Module to a Mixin
+# Comment out the old code in shout.rb
+
 module Shout
-  def self.yell_angrily(words)
-    words + "!!!" + " :("
+  def yell_angrily(words)        # notice - 'self.' is removed, since module is called by class outside of module
+    puts "#{words} + !!! +  :("
   end
 
-  def self.yelling_happily
+  def yelling_happily
     puts "Thank you Lord!"
   end
 end
-# Add driver code underneath your module declaration that calls both of your module methods.
-p Shout.yell_angrily("hiya")
-Shout.yelling_happily
-Shout.yell_angrily("once again")
+
+class Bird
+  include Shout
+end
+
+class Plane
+  include Shout
+end
+
+Plane.new.yell_angrily("hiya")
+p "-"*10
+Plane.new.yelling_happily
