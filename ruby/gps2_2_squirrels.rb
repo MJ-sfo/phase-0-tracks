@@ -35,7 +35,7 @@
 # # output:
 
 # # Method to update the quantity of an item
-# method - udate.  paramaeter item, quantity
+# method - update.  parameter item, quantity
 # make key = new quantity
 # # input:
 # # steps:
@@ -43,37 +43,60 @@
 
 # # Method to print a list and make it look pretty
 # hash.each do loop
-#   print each key, quanity in nice line
+#   print each key, quantity in nice line
 # # input:
 # steps:
 # output:
 
 def creat_list(text_list)
-  hash ={}
-  list_array = text_list.split(' ') 
-  
-  list_array.each do |item|
+  hash ={}  
+  text_list.split(' ').each do |item|
     p item
     hash[item] = 1
   end
   return hash
 end
-grocery_list ="oranges apples bannanas steak"
+
+def add_newitem(list, newitem,  quantity = 1)
+  list[newitem] = quantity
+  return list
+end
+def update(hash, whatremove, quantity)    # similar to add_newitems
+  hash[whatremove] = quantity
+  return hash
+end
+
+def remove_item(hash, what_remove)
+  hash.delete(what_remove)
+  return hash
+end
+
+
+def to_print(hash)
+  hash.each do |key, value|
+    puts "Please remember to buy #{value} number of #{key}."
+  end
+end
+
+grocery_list ="oranges apples bananas steak"
 hash = creat_list(grocery_list)
 puts "our hash is: #{hash}"
 
-def add_newitem(list, newitem,  quantity = 1)
-  new_hash = list
-  new_hash[newitem] = quantity
-  return new_hash
-end
- hash = add_newitem(hash, "cereal")
- puts hash
+hash = add_newitem(hash, "cereal")
+puts hash
 
-def remove_item(hash, what_remove)
-  new_hash= hash
-  new_hash.delete(what_remove)
-  return new_hash
-end
 hash = remove_item(hash, "apples")
 puts "new list is : #{hash}"
+
+hash = update(hash, "oranges", 10 )
+puts "updated list is #{hash}"
+
+to_print(hash)
+
+# Release 4: Reflect
+# What did you learn about pseudocode from working on this challenge?
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# What does a method return?
+# What kind of things can you pass into methods as arguments?
+# How can you pass information between methods?
+# What concepts were solidified in this challenge, and what concepts are still confusing?
