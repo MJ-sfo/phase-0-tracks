@@ -1,49 +1,24 @@
 # 6-6 Solo Challenge- A Game Class - Release 1-Design a Game
 # pseudopod
-# enter word
-# strip, lowercase, remove any non-letters
-# "    hello    ".strip   #=> "hello"
-# if no letters, send error
-# "".empty?        #=> true
-# str.squeeze(" ")   - removes multi-space
-# .gsub(/[^a-zA-Z]/, '')  - removes non-letters
+# testword = "  i lov(e   a 45 CAM. "
+# what done done in class, what in driver code?
+# CLASS
+# clean input
+# check that actually has letters
 
-# create text of dashes, equal to length of word
-# set finish to false
-# loop for guesses - # twice the length of word
-# quit when want
-# guess - strip, take first letter
-# if new guess match previous, give message, restart loop  
-# 'hello'.match('xx')         #=> nil  --so if nil, not in 
-# "hello".include? "lo"   #=> true
-# "hello".index('e')             #=> 1 - finds index of FIRST letter,
-# loop to find other letters
+# set length of dashes
 
-# add lowercase guess to array
-# find index in word of guessed letter
-# after, change dashes with guessed letter, print
-# "hello".gsub(/[aeiou]/, '*')                  #=> "h*ll*"
+# clean guess,
+# check has letters
+# receive array, check if already in array, add to array,
 
-# if letter in word, congrats., else taunt
-# if no more dashes, congrats, set finish to true
-# add to counter
-# end
-# print end if did not finish guessing word.
+# if letter in original word,  change dashes, print dashes, congrats
+# else, taunt
 
-testword = "  i lov(e   a 45 CAM. "
-testword =testword.gsub(/[^a-zA-Z]/, '').downcase
-p testword
-finish = false
-if testword.empty? == true
-  puts"Sorry, must include letters."
-  finish = true
-end
-hidden_word  = "-"*testword.length
-puts hidden_word
-
-class Guess-word
-  attr_accessor :testword, :guess
-  attr_reader :hidden_word
+# DRIVER CODE?
+# asks for word, send
+# loop based on length
+# ask for guesses
   
   def initialize
     @testword =""
@@ -54,7 +29,7 @@ class Guess-word
   end
   
   def clean_testword
-    @testword =@testword.gsub(/[^a-zA-Z]/, '').downcase
+    @testword = @testword.gsub(/[^a-zA-Z]/, '').downcase
     if @testword.empty? == true
       puts "Sorry, must include letters."
       @finish = true

@@ -29,3 +29,24 @@ add to counter
 end
 print end if did not finish guesssing word.
 
+-------------------
+what done done in class, what in driver code?
+CLASS
+clean input
+check that actualy has letters
+
+set lenght of dashes
+
+clean guess,
+check has letters
+recieve array, check if already in array, add to array,
+
+if letter in original word,  change dashes, print dashes, congrats
+else, taunt
+
+DRIVER CODE?
+asks for word, send
+loop based on lenght
+ask for guesses
+tells when done
+
