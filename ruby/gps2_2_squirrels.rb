@@ -61,3 +61,19 @@ end
 grocery_list ="oranges apples bannanas steak"
 hash = creat_list(grocery_list)
 puts "our hash is: #{hash}"
+
+def add_newitem(list, newitem,  quantity = 1)
+  new_hash = list
+  new_hash[newitem] = quantity
+  return new_hash
+end
+ hash = add_newitem(hash, "cereal")
+ puts hash
+
+def remove_item(hash, what_remove)
+  new_hash= hash
+  new_hash.delete(what_remove)
+  return new_hash
+end
+hash = remove_item(hash, "apples")
+puts "new list is : #{hash}"
