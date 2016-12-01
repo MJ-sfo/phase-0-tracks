@@ -95,8 +95,21 @@ to_print(hash)
 
 # Release 4: Reflect
 # What did you learn about pseudocode from working on this challenge?
+# got more in-dept of the steps going to take in coding
+
 # What are the tradeoffs of using arrays and hashes for this challenge?
+# since dealing with paired data -grocery item and number of items - hashes seemed obvious 
+
 # What does a method return?
+# depends - only return a completed value if use 'p' statement or return.  otherwise might return nil
+
 # What kind of things can you pass into methods as arguments?
+# any object - i sent strings, numbers, even a hash.
+
 # How can you pass information between methods?
+# define variable outside method, send as parameter into method, return value at end of method
+
 # What concepts were solidified in this challenge, and what concepts are still confusing?
+# solidified - pushing paired data into hash.  look up general ideas like hash in ruby-docs, not just individual methods. 
+# parameters with default data. can perform a method that changes a variable without setting it to equal something else.
+# Everything seems clear at the moment. 
