@@ -22,8 +22,6 @@
   
  class Mike_game
    
-  # attr_accessor @guess, @list_guesses
-   
   def initialize
     @test_toclean =""
     @guess = ""
@@ -46,7 +44,6 @@
   end
   
   def receive_guess(test_toclean, list_guesses, blank_spaces, to_guess)
-    
     @guess = clean_text(test_toclean)
     if @guess.length > 0 
       @guess = @guess[0]     # check for length, else 0 index is nil
