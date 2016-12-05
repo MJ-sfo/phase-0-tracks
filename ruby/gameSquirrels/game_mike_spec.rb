@@ -15,4 +15,12 @@
     # mike_test = Mike_game.new
     expect(mike_test.receive_guess("  i lov(e   a 45 CAM. ")).to eq "i"
   end
+
+    it "finds first letter" do
+    # mike_test = Mike_game.new
+    expect(mike_test.receive_guess("dad", "", "---", "a")).to eq "i"
+
+    (test_toclean, list_guesses, blank_spaces, to_guess)
+  end
+
 end

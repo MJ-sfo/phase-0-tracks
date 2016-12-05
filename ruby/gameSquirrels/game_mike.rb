@@ -30,14 +30,13 @@
     @list_guesses = ""
     @to_guess = ""
     @blank_spaces = ""
-    @finish = false
   end
   
   def clean_text(test_toclean)
     @test_toclean = test_toclean.gsub(/[^a-zA-Z]/, '').downcase
     if @test_toclean.empty? == true
       puts "Sorry, must include letters."
-      @finish = true
+      @test_toclean = ""
     end
     @test_toclean
   end
@@ -48,10 +47,15 @@
   
   def receive_guess(test_toclean, list_guesses, blank_spaces, to_guess)
     
-    @guess = clean_text(test_toclean)[0]
+    @guess = clean_text(test_toclean)
+    if @guess.length > 0 
+      @guess = @guess[0]     # check for length, else 0 index is nil
+    end
     @list_guesses = list_guesses
     prev_guess
-    @list_guesses = @list_guesses + @guess
+    if @guess != ""
+      @list_guesses << @guess
+    end
     @blank_spaces = blank_spaces
     @to_guess = to_guess
     string_blanksandfound
@@ -59,11 +63,13 @@
   end
 
   def prev_guess
-    if  @list_guesses.count(@guess) > 0
-      puts "you already guessed '{@guess}'."
-      @guess = ""
-    else
-      puts "your guess is: '#{@guess}'"
+    if  @list_guesses != ""
+      if   @list_guesses.count(@guess) > 0
+        puts "you already guessed '#{@guess}'."
+        @guess = ""
+      else
+        puts "your guess is: '#{@guess}'"
+      end
     end
   end       # end of prev_guess
     
@@ -91,11 +97,22 @@ testing = Mike_game.new
 to_guess = testing.clean_text(to_guess)
 puts "the user must guess '#{to_guess}'."
 blank_spaces = testing.set_hidden_word(to_guess)
-
 list_guesses = ""
+continue = true
+index = 0 
 
-p blank_spaces
-puts "Game player, what letter do you guess?"
-guess = gets.chomp
-testing.receive_guess(guess, list_guesses, blank_spaces, to_guess)
-puts "letter you guessed was #{guess}, previous guesses are #{list_guesses}, blanks are #{blank_spaces}, and original word is #{to_guess}"
+while index <=  to_guess.length*2 
+  p blank_spaces
+  puts "Game player, what letter do you guess?"
+  guess = gets.chomp
+  testing.receive_guess(guess, list_guesses, blank_spaces, to_guess)
+
+  if blank_spaces.count("-") == 0
+    puts "congrats!  you found the word in #{index} guesses !!!"
+    break
+  end
+  index +=1 
+end
+if blank_spaces.count("-") > 0
+  puts "Sorry, you ran out of guesses"
+end
