@@ -20,31 +20,45 @@
 # loop based on length
 # ask for guesses
   
+ class Mike_game
   def initialize
-    @testword =""
+    @test_toclean =""
     @guess = ""
     @list_guesses = ""
     @hidden_word = ""
     @finish = false
   end
   
-  def clean_testword
-    @testword = @testword.gsub(/[^a-zA-Z]/, '').downcase
-    if @testword.empty? == true
+  def clean_text(test_toclean)
+    @test_toclean = test_toclean.gsub(/[^a-zA-Z]/, '').downcase
+    if @test_toclean.empty? == true
       puts "Sorry, must include letters."
       @finish = true
     end
-    set_hidden_word
-    puts "Guess the letters to '#{@hidden_word}'"
+    @test_toclean
   end
 
   def set_hidden_word
     @hidden_word  = "-"*@testword.length
   end
   
-  def receive_guess
-    @guess = @guess.gsub(/[^a-zA-Z]/, '').downcase[0]
+  def receive_guess(test_toclean)
+    @guess = clean_test(test_toclean)[0]
     puts "your guess is: '#{@guess}'"
     @list_guesses = @list_guesses + @guess
   end
 end
+
+  # def clean_test
+  #   @testword = @testword.gsub(/[^a-zA-Z]/, '').downcase
+  #   if @testword.empty? == true
+  #     puts "Sorry, must include letters."
+  #     @finish = true
+  #   end
+  #   set_hidden_word
+  #   puts "Guess the letters to '#{@hidden_word}'"
+  # end
+  
+  
+testing = Mike_game.new 
+puts testing.clean_text("  i lov(e   a 45 CAM. ")
