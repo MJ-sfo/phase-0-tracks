@@ -43,9 +43,10 @@
   end
   
   def receive_guess(test_toclean)
-    @guess = clean_test(test_toclean)[0]
+    @guess = clean_text(test_toclean)[0]
     puts "your guess is: '#{@guess}'"
     @list_guesses = @list_guesses + @guess
+    @guess
   end
 end
 
