@@ -2,8 +2,8 @@
 
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with: benjimon, and guide Gary Sperka.
+# We spent 1 hours on this challenge.
 
 # EXPLANATION OF require_relative
 #
@@ -31,6 +31,7 @@ class VirusPredictor
   def predicted_deaths  #(population_density, population, state)
     # predicted deaths is solely based on population density
 
+     # case would be easier to read, and to write - if started with case, instead of if/else 
     # case @population_density     - could use CASE rather than IF-ELSIF
     #   when @population_density >= 200 then number_of_deaths = (@population * 0.4).floor
     #   when @population_density >= 150 then number_of_deaths = (@population * 0.3).floor
@@ -101,3 +102,21 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# Release 8: Reflect
+# On your own, add a commented reflection section to your my_solution.rb file. Answer the following questions in your reflection:
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# Outer hash uses text as a key – useful, as later in program prints the keys.  Inner hash uses symbols as keys. 
+
+# What does require_relative do? How is it different from require?
+# require_relative refers to the other file, state_data.rb. – in this case, to find data.  ‘require’ actually RUNS another file
+
+# What are some ways to iterate through a hash?
+# An .each loop, where you can automatically use key and paired value at each line.  Could do a loop that runs as many times as length of hash
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything? 
+# The method was using global variables for parameters.  Since global, don’t need parameters.
+
+# What concept did you most solidify in this challenge?
+# I learned about case statements, instead of if/else statements.  More practice doing .each loop on a hash.
