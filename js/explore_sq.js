@@ -3,9 +3,11 @@ var rev_string = "";
 
 function reverse() {
   
-  for (var i = 0; i < str.length; i +=1) {   
+  for (var i = str.length - 1; i > -1; i += -1) {   
     console.log(str[i]);  
+    rev_string = rev_string + str[i];
   }
+  console.log(rev_string);
 }
 
  reverse() 
