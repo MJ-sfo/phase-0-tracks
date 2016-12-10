@@ -1,13 +1,11 @@
-var str = "Loop over me!";
-var rev_string = "";
-
-function reverse() {
-  
-  for (var i = str.length - 1; i > -1; i += -1) {   
-    console.log(str[i]);  
-    rev_string = rev_string + str[i];
-  }
-  console.log(rev_string);
+var colors= ["green", "beige", "yellow", "light-blue"];
+var names = ["Ed", "Chomper", "Blackie", "Charlie" ];
+var horse_colors = {};
+colors.push("Black");
+names.push("Dixie");
+for (var i = 0; i < names.length; i++){
+  horse_colors[names[i]] = colors[i];
 }
-
- reverse() 
+console.log(colors);
+console.log(names);
+console.log(horse_colors);
