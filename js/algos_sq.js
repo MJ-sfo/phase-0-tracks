@@ -60,3 +60,24 @@ console.log(key_value(test_array, test2));
 console.log(key_value(test_array, test3));
 console.log(key_value(test3, test2));
 console.log(key_value(test_array, text4));
+
+
+
+// Release 2: Generate Random Test Data
+// pseudocode:
+// 1 - Write a function that takes an integer for length
+// define empty array
+// create loop - length = integer
+// create loop - random # cycles, up to 10
+// use variable = Math.floor(Math.random()*10);   // random number 0-9
+// use var charset = "abcdefghijklmnopqrstuvwxyz";
+// add random letter to variable
+// end random loop
+// enter random word into array
+// end integer loop
+
+// 2 - do loop 10 times
+// get array from function from Release 2
+// print array
+// send to function longest_phrase
+// print 
