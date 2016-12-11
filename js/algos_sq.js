@@ -98,5 +98,12 @@ function random_words(array_length){
   return random_array;
 }      // end of function
 
-var test = random_words(5);
-console.log(test);
+var test_array = [];
+var longest_word = "";
+for (test_loop = 0; test_loop < 10; test_loop +=1) {
+  test_array = random_words(test_loop);
+  console.log(test_array);
+  longest_word = longest_phrase(test_array);
+  console.log("The longest word of this array is: '" + longest_word + "'");
+  console.log("------------");
+}
