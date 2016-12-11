@@ -81,3 +81,22 @@ console.log(key_value(test_array, text4));
 // print array
 // send to function longest_phrase
 // print 
+
+function random_words(array_length){
+  var random_array = [""];
+  var charset = "abcdefghijklmnopqrstuvwxyz";
+  for (i=0; i<array_length; i +=1) {
+    var new_word = "";
+    var word_length = Math.floor(Math.random()*10);
+    for (index=0; index<word_length; index +=1) {
+      new_word = new_word + charset[Math.floor(Math.random()*26)];
+    }    // end random word
+    random_array.push(new_word);
+  }     // end loop to create array
+  // elimintate first "" from array
+  var remove = random_array.splice(0, 1);
+  return random_array;
+}      // end of function
+
+var test = random_words(5);
+console.log(test);
