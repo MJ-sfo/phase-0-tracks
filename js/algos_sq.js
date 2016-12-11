@@ -38,16 +38,25 @@ console.log("The longest text is: " + longest_phrase(text4));
 
 function key_value(object1, object2) {
   var match = false;
-  var alertText = "";
-  for (i1=0; i1<object1.length; i1 +=1) {
-    for (i2 =0; i2<object2.length; i2 +=1) {
+  for(var index in object1) {  // this is how to iterate through object/hash in JS
+    console.log("object1.'" + index + "' is: " + object1[index] );
 
-      console.log("object1[i1] " + i1 + " is: " + object1[i1]  );
-      console.log("object2[i2] " + i2 + " is:" + object2[i2] );
-      if (object1[i1] == object2[i2]) {
+    for(var i2 in object2) {
+      console.log("object2" + i2 + "' is: " + object2[i2] );
+      if (object1[index] == object2[i2]) {
         match = true;
       }  // if equal
-    }  // loop for i2
-  }  // loop for i1
+    }
+    console.log("-----------");
+      }
   return match;
 } // function key_value
+
+var test_array = {name: "Steven", age: 54};
+var test2 = {name: "Tamir", age: 54};
+// var test3 = {name: "Tamir", age: 19};
+// var text4 = {name: "Dave", age: 15};
+console.log(key_value(test_array, test2));
+// console.log("The longest text is: " + longest_phrase(test2));
+// console.log("The longest text is: " + longest_phrase(test3));
+// console.log("The longest text is: " + longest_phrase(text4));
