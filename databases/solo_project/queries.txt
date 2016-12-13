@@ -1,0 +1,44 @@
+Release 2: Execute SQL Queries
+1- Display the information in one table (either table is fine).
+
+sqlite> select * from pies;
+1|Large|true|1
+2|Small|false|2
+3|Large|true|1
+4|Medium|true|3
+
+sqlite> select * from food;
+1|Strawberry
+2|Chocolate
+3|Blue Berry
+
+2- Update an item that meets some condition (you can choose a condition that makes sense).
+ update pies SET available="false" WHERE size = "Medium";
+sqlite> select * from pies;
+1|Large|true|1
+2|Small|false|2
+3|Large|true|1
+4|Medium|false|3
+
+3- Display the information in both tables using one query.
+SELECT * FROM pies, food WHERE pies.food_id = food.id;
+1|Large|true|1|1|Strawberry
+2|Small|false|2|2|Chocolate
+3|Large|true|1|1|Strawberry
+4|Medium|false|3|3|Blue Berry
+
+4- Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+SELECT pies.size, food.fruit, pies.available FROM pies JOIN food ON pies.food_id = food.id;
+Large|Strawberry|true
+Small|Chocolate|false
+Large|Strawberry|true
+Medium|Blue Berry|false
+
+5- Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM pies WHERE id=3;
+sqlite> select * from pies;
+1|Large|true|1
+2|Small|false|2
+4|Medium|false|3
+
