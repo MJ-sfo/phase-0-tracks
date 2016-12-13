@@ -42,3 +42,42 @@ sqlite> select * from pies;
 2|Small|false|2
 4|Medium|false|3
 
+-------------------------
+Release 3: Research on Your Own
+
+SELECT * FROM pies INNER JOIN food on pies.food_id = food.id;
+1|Large|true|1|1|Strawberry
+2|Small|false|2|2|Chocolate
+4|Medium|false|3|3|Blue Berry
+
+SELECT * FROM pies INNER JOIN food on pies.food_id = food.id;
+1|Large|true|1|1|Strawberry
+2|Small|false|2|2|Chocolate
+4|Medium|false|3|3|Blue Berry
+
+sqlite> select * from pies cross join food;
+1|Large|true|1|1|Strawberry
+1|Large|true|1|2|Chocolate
+1|Large|true|1|3|Blue Berry
+2|Small|false|2|1|Strawberry
+2|Small|false|2|2|Chocolate
+2|Small|false|2|3|Blue Berry
+4|Medium|false|3|1|Strawberry
+4|Medium|false|3|2|Chocolate
+4|Medium|false|3|3|Blue Berry
+
+SELECT * FROM pies LEFT OUTER JOIN food ON pies.food_id = food.id;
+1|Large|true|1|1|Strawberry
+2|Small|false|2|2|Chocolate
+4|Medium|false|3|3|Blue Berry
+
+____________________________________________________
+question - how get out of sql command ?  for example:
+sqlite> echo
+   ...> off
+   ...> .exit
+   ...> .echo
+   ...> q
+   ...>
+I can't get out, except by exiting git bash
+
