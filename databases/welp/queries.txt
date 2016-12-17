@@ -1,0 +1,17 @@
+select * from businesses, users, reviews where businesses.id = reviews.business_id and reviews.user_id = users.id;
+1|CXO Inc|2|Ollie|Duncan|1|4|A little too much salt|1|2
+3|Duncan and Sons, Ltd.|1|Michael|Laird|2|1|Not green enough|3|1
+3|Duncan and Sons, Ltd.|1|Michael|Laird|3|2|Weird name for a restaurant|3|1
+sqlite>
+
+select users.first_name, reviews.stars, reviews.comment, businesses.name join users on reviews.user_id = users.id and businesses on reviews.business_id = businesses.id;
+Error: near "join": syntax error
+
+ select users.first_name, reviews.stars, reviews.comment, businesses.name from users join reviews on users.id = reviews.user_id join businesses on businesses.id = reviews.business_id;
+Ollie|4|A little too much salt|CXO Inc
+Michael|1|Not green enough|Duncan and Sons, Ltd.
+Michael|2|Weird name for a restaurant|Duncan and Sons, Ltd.
+
+select users.first_name, reviews.stars, reviews.comment, businesses.name from users join reviews on users.id = reviews.user_id join businesses on businesses.id = reviews.business_id where businesses.id = 3;
+Michael|1|Not green enough|Duncan and Sons, Ltd.
+Michael|2|Weird name for a restaurant|Duncan and Sons, Ltd.
