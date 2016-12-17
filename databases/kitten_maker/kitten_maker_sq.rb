@@ -10,17 +10,17 @@ require 'faker'
 db = SQLite3::Database.new("kittens.db")
 db.results_as_hash = true
 
-# # learn about fancy string delimiters
-# create_table_cmd = <<-SQL
-#   CREATE TABLE IF NOT EXISTS kittens(
-#     id INTEGER PRIMARY KEY,
-#     name VARCHAR(255),
-#     age INT
-#   )
-# SQL
+# learn about fancy string delimiters
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS kittens(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    age INT
+  )
+SQL
 
-# # create a kittens table (if it's not there already)
-# db.execute(create_table_cmd)
+# create a kittens table (if it's not there already)
+db.execute(create_table_cmd)
 
 # # add a test kitten
 # # db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 10)")
