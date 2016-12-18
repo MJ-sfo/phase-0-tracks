@@ -22,23 +22,31 @@ SQL
 # create a kittens table (if it's not there already)
 db.execute(create_table_cmd)
 
-# # add a test kitten
-# # db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 10)")
+# add a test kitten
+# db.execute("INSERT INTO kittens (name, age) VALUES ('Whiskers', 1)")
 
-# # add LOOOOTS of kittens!
-# # so. many. kittens. 
-# #KittenExplosion
-# def create_kitten(db, name, age)
-#   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
+# explore ORM by retrieving data
+kittens = db.execute('select * from kittens')
+# puts kittens.class
+# p kittens
+# kittens.each do |kitten|
+#   puts "#{kitten[1]} is #{kitten[2]} months old."
 # end
 
-# 10000.times do
-#   create_kitten(db, Faker::Name.name, 0)
-# end
+# add LOOOOTS of kittens!
+# so. many. kittens. 
+#KittenExplosion
+def create_kitten(db, name, age)
+  db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
+end
 
-# # explore ORM by retrieving data
-# # kittens = db.execute("SELECT * FROM kittens")
-# # kittens.each do |kitten|
-# #  puts "#{kitten['name']} is #{kitten['age']}"
-# # end
+100.times do
+  create_kitten(db, Faker::Name.name, 0)
+end
+
+# explore ORM by retrieving data
+kittens = db.execute("SELECT * FROM kittens")
+kittens.each do |kitten|
+ puts "#{kitten['name']} is #{kitten['age']}"
+end
 
