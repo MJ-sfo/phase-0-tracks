@@ -51,3 +51,40 @@ db.execute(create_table_cmd)
 # ask if want to check a new movie
 # loop through same qustions - don't need stars
 # compares with history of each entry, comes up with total ave stars.  
+
+class Ranking
+  attr_accessor :actor, :actor_star, :director, :director_star, :film, :film_star, :genre, :genre_star
+  def initialize
+    @actor =""
+    @actor_star 
+    @director = ""
+    @director_star
+    @film = ""
+    @film_star
+    @genre = ""
+    @genre_star
+  end
+end
+
+rank = Ranking.new
+repeat = true 
+
+while repeat
+  puts "What movie do you want to rank? (type q or Quit to end)"
+  movie = gets.chomp.strip
+  puts "received '#{movie}'"
+  if movie.downcase == "q" or movie.downcase == "quit" 
+    puts "End of movie input !"
+    repeat = false
+    break
+  end
+  rank.film = movie
+  
+  puts "Now enter elements of movie, or hit 'Return' if declie to enter. All stars are 0-5, 5 as highest."
+  puts "How many stars for #{movie}?"
+  film_star = gets.chomp.strip.to_i.floor
+  if film_star > 5 or film_star < 0 
+    film_star = nil
+  end
+  puts "you ranked #{movie} with #{film_star} stars."
+  
