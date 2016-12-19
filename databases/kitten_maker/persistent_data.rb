@@ -18,11 +18,11 @@ require 'sqlite3'
 require 'faker'
 
 # create SQLite3 database
-db = SQLite3::Database.new("movies.db")
+$db = SQLite3::Database.new("movies.db")
 
 # a fancy string delimiters
 create_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS movie_history(
+  CREATE TABLE IF NOT EXISTS movie_history (
     id INTEGER PRIMARY KEY,
     actor VARCHAR(255),
     actor_star INT,
@@ -32,14 +32,22 @@ create_table_cmd = <<-SQL
     film_star INT,
     genre VARCHAR(255),
     genre_star INT,
-    avoid VARCHAR(255),
+    avoid VARCHAR(255)
   )
 SQL
+
+input_into_table_cmd = <<-SQLL
+  INSERT INTO movie_history (
+  actor, actor_star, director, director_star, film, film_star, genre, genre_star)
+  VALUES
+  (?, ?, ?, ?, ?, ?, ?, ?
+  )
+SQLL
 
 # INSERT INTO movies (actor, actor_star, director, director_star, film, film_star, genre, genre_star) VALUES ("Gumdrop", 2, "true");
 
 # create a movies table (if it's not there already)
-db.execute(create_table_cmd)
+$db.execute(create_table_cmd)
 
 # psudocode
 # ask if want to input into movie_history
@@ -68,17 +76,6 @@ class Ranking
   def output
     puts "the inputed data is: #{@actor}, #{@director}, #{@film}, #{@film_star}, #{@genre}. "
   end
-  def saveto_db
-    input_into_table_cmd = <<-SQL
-      INSERT INTO movies (
-      actor, actor_star, director, director_star, film, film_star, genre, genre_star)
-      VALUES
-      (@actor, @actor_star, @director, @director_star, @film, @film_star, @genre, @genre_star
-      )
-    SQL
-    db.execute(input_into_table_cmd)
-    
-  end
 end
 
 rank = Ranking.new
@@ -95,7 +92,6 @@ while repeat
   end
   rank.film = film
    
-  
   puts "How many stars for #{film}? In-between 0-5, 5 as highest "
   film_star = gets.chomp.strip.to_i.floor
   if film_star <= 5 and film_star >= 0 
@@ -130,7 +126,7 @@ while repeat
   
   puts "What was the movie genre?"
   genre = gets.chomp.strip
-  rank.genre = genre
+  rank.genre = genre.downcase
   if genre == ""
     rank.genre_star = nil
   else
@@ -138,5 +134,7 @@ while repeat
   end 
   p "-"*20
   rank.output
+  $db.execute(input_into_table_cmd, [rank.actor, rank.actor_star, rank.director, rank.director_star, rank.film, rank.film_star, rank.genre, rank.genre_star])
+
 end 
   
