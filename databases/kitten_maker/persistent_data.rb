@@ -64,27 +64,68 @@ class Ranking
     @genre = ""
     @genre_star
   end
+  
+  def output
+    puts "the inputed data is: #{@actor}, #{@director}, #{@film}, #{@film_star}, #{@genre}. "
+  end
 end
 
 rank = Ranking.new
 repeat = true 
 
 while repeat
-  puts "What movie do you want to rank? (type q or Quit to end)"
-  movie = gets.chomp.strip
-  puts "received '#{movie}'"
-  if movie.downcase == "q" or movie.downcase == "quit" 
+  puts "What film do you want to rank? (type q or Quit to end)"
+  film = gets.chomp.strip
+  puts "received '#{film}'"
+  if film.downcase == "q" or film.downcase == "quit" 
     puts "End of movie input !"
     repeat = false
     break
   end
-  rank.film = movie
+  rank.film = film
+   
   
-  puts "Now enter elements of movie, or hit 'Return' if declie to enter. All stars are 0-5, 5 as highest."
-  puts "How many stars for #{movie}?"
+  puts "How many stars for #{film}? In-between 0-5, 5 as highest "
   film_star = gets.chomp.strip.to_i.floor
-  if film_star > 5 or film_star < 0 
+  if film_star <= 5 and film_star >= 0 
+    film_star
+  else
     film_star = nil
   end
-  puts "you ranked #{movie} with #{film_star} stars."
+  puts "you ranked #{film} with #{film_star} stars."
+  # puts "the film_star class is: '#{film_star.class}'"
+  rank.film_star = film_star
+  
+  puts "Now enter elements of film, or hit 'Return' if decline to enter."
+  p "-"*20
+  puts "Who was the main actor?"
+  actor = gets.chomp.strip
+  rank.actor = actor
+  # puts "the actor class is: '#{actor.class}'"
+  if actor == ""
+    rank.actor_star = nil
+  else
+    rank.actor_star = film_star
+  end
+  
+  puts "Who was the director?"
+  director = gets.chomp.strip
+  rank.director = director
+  if director == ""
+    rank.director_star = nil
+  else
+    rank.director_star = film_star
+  end 
+  
+  puts "What was the movie genre?"
+  genre = gets.chomp.strip
+  rank.genre = genre
+  if genre == ""
+    rank.genre_star = nil
+  else
+    rank.genre_star = film_star
+  end 
+  p "-"*20
+  rank.output
+end 
   
