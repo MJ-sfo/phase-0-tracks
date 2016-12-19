@@ -33,10 +33,10 @@ create_table_cmd = <<-SQL
     genre VARCHAR(255),
     genre_star INT,
     avoid VARCHAR(255),
-    avoid_star INT,
-    ave_star INT
   )
 SQL
+
+# INSERT INTO movies (actor, actor_star, director, director_star, film, film_star, genre, genre_star) VALUES ("Gumdrop", 2, "true");
 
 # create a movies table (if it's not there already)
 db.execute(create_table_cmd)
@@ -49,7 +49,7 @@ db.execute(create_table_cmd)
 #   put average for each column and total ave at last column
 
 # ask if want to check a new movie
-# loop through same qustions - don't need stars
+# loop through same questions - don't need stars
 # compares with history of each entry, comes up with total ave stars.  
 
 class Ranking
@@ -67,6 +67,17 @@ class Ranking
   
   def output
     puts "the inputed data is: #{@actor}, #{@director}, #{@film}, #{@film_star}, #{@genre}. "
+  end
+  def saveto_db
+    input_into_table_cmd = <<-SQL
+      INSERT INTO movies (
+      actor, actor_star, director, director_star, film, film_star, genre, genre_star)
+      VALUES
+      (@actor, @actor_star, @director, @director_star, @film, @film_star, @genre, @genre_star
+      )
+    SQL
+    db.execute(input_into_table_cmd)
+    
   end
 end
 
