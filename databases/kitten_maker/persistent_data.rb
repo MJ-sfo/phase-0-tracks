@@ -72,6 +72,48 @@ class Ranking
     @genre_star
     @choice
   end
+
+  def output
+    puts "You entered film #{@film} with #{@actor}, directed by #{@director} of genre #{@genre} for #{@film_star} stars."
+  end
+  
+  def choose_actor(find_actor)
+    actor_data = $db.execute("SELECT actor, actor_star FROM movie_history WHERE actor = (?)", [find_actor])
+    puts "the actor data is: #{actor_data}. "
+    num_movies = 0 
+    total_ratings = 0
+    actor_data.each do |index|
+      if index[1] >=0 and index[1] <= 5
+        num_movies +=1 
+        total_ratings = total_ratings + index[1]
+      end
+    end
+    if num_movies > 0 
+      ave = (total_ratings / num_movies)
+      puts "You like #{find_actor} with #{ave} stars!"
+    else
+      puts "you haven't rated any movies that has #{find_actor} !!!"
+    end
+  end   # end of def
+  
+  def choose_director(find_director)
+    director_data = $db.execute("SELECT director, director_star FROM movie_history WHERE director = (?)", [find_director])
+    puts "the director data is: #{director_data}. "
+    num_movies = 0 
+    total_ratings = 0
+    director_data.each do |index|
+      if index[1] >=0 and index[1] <= 5
+        num_movies +=1 
+        total_ratings = total_ratings + index[1]
+      end
+    end
+    if num_movies > 0 
+      ave = (total_ratings / num_movies)
+      puts "You like #{find_director} with #{ave} stars!"
+    else
+      puts "you haven't rated any movies that has #{find_director} !!!"
+    end
+  end   # end of def
   
   def choose_genre(find_genre)
     genre_data = $db.execute("SELECT genre, genre_star FROM movie_history WHERE genre = (?)", [find_genre])
@@ -154,17 +196,21 @@ end
 
 puts "I can predict how much you will like a new movie from your past experiences."
 puts "Enter choice of: 'actor', 'director', or 'genre'"
-choice = gets.chomp.strip.downcase
-if choice == "actor"
-  
-elsif choice == "director"
+choice = gets.chomp.strip.downcase[0]
+if choice == "a"
+  puts "what actor are you looking at?"
+  actor = gets.chomp.strip 
+  rank.choose_actor(actor)
+elsif choice == "d"
+  puts "what director are you looking at?"
+  director = gets.chomp.strip 
+  rank.choose_director(director)
 
-elsif choice == "genre"
+elsif choice == "g"
   puts "what genre are you looking at?"
   genre = gets.chomp.strip 
   rank.choose_genre(genre)
 else
   puts "Sorry, the only choices are: 'actor', 'director', or 'genre'"
 end
-
   
