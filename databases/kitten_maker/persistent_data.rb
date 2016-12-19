@@ -31,8 +31,7 @@ create_table_cmd = <<-SQL
     film VARCHAR(255),
     film_star INT,
     genre VARCHAR(255),
-    genre_star INT,
-    avoid VARCHAR(255)
+    genre_star INT
   )
 SQL
 
@@ -61,7 +60,7 @@ $db.execute(create_table_cmd)
 # compares with history of each entry, comes up with total ave stars.  
 
 class Ranking
-  attr_accessor :actor, :actor_star, :director, :director_star, :film, :film_star, :genre, :genre_star
+  attr_accessor :actor, :actor_star, :director, :director_star, :film, :film_star, :genre, :genre_star, :choice
   def initialize
     @actor =""
     @actor_star 
@@ -71,10 +70,12 @@ class Ranking
     @film_star
     @genre = ""
     @genre_star
+    @choice
   end
   
-  def output
-    puts "the inputed data is: #{@actor}, #{@director}, #{@film}, #{@film_star}, #{@genre}. "
+  def choose_genre(find_genre)
+    genre_data = $db.execute("SELECT genre, genre_star FROM movie_history WHERE genre = (?)", [find_genre])
+    puts "the genre data is: #{genre_data}. "
   end
 end
 
@@ -135,6 +136,20 @@ while repeat
   p "-"*20
   rank.output
   $db.execute(input_into_table_cmd, [rank.actor, rank.actor_star, rank.director, rank.director_star, rank.film, rank.film_star, rank.genre, rank.genre_star])
-
 end 
+
+puts "I can predict how much you will like a new movie from your past experiences."
+puts "Enter choice of: 'actor', 'director', or 'genre'"
+choice = gets.chomp.strip.downcase
+if choice == "actor"
+  
+elsif choice == "director"
+
+elsif choice == "genre"
+  puts "what genre are you looking at?"
+  genre = gets.chomp.strip 
+  rank.choose_genre(genre)
+else
+  puts "Sorry, the only choices are: 'actor', 'director', or 'genre'"
+end
   
