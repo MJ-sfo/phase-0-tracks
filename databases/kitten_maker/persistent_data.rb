@@ -76,8 +76,22 @@ class Ranking
   def choose_genre(find_genre)
     genre_data = $db.execute("SELECT genre, genre_star FROM movie_history WHERE genre = (?)", [find_genre])
     puts "the genre data is: #{genre_data}. "
-  end
-end
+    num_movies = 0 
+    total_ratings = 0
+    genre_data.each do |index|
+      if index[1] >=0 and index[1] <= 5
+        num_movies +=1 
+        total_ratings = total_ratings + index[1]
+      end
+    end
+    if num_movies > 0 
+      ave = (total_ratings / num_movies)
+      puts "You like #{find_genre} with #{ave} stars!"
+    else
+      puts "you haven't rated any movies that are #{find_genre} !!!"
+    end
+  end   # end of def
+end     # end of class
 
 rank = Ranking.new
 repeat = true 
@@ -152,4 +166,5 @@ elsif choice == "genre"
 else
   puts "Sorry, the only choices are: 'actor', 'director', or 'genre'"
 end
+
   
