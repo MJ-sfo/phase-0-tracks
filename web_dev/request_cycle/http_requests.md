@@ -19,3 +19,5 @@ POST requests are never cached
 POST requests do not remain in the browser history
 
 4- Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+from wiki:  a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing
+Also, keeps some user's info - name and addresses already entered, shopping list while viewing Amazon, or browsing history - that helps user and site communicate with minimum of fuss.  Downside - hackers try to find your cookie info, or set up fake third-party cookies.
