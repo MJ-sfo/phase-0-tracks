@@ -16,3 +16,20 @@ Two great advantages of virtual machine:
 4- Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
 For one thing, as root you can edit files your computer uses to start up the operating system
 Only the system administrator should have access to the core system. That privileged user is traditionally called root
+
+Release 2: Explore the DOM
+Use dev tools to explore the DOM properties of an HTML element
+
+looking at page The HTML DOM Element Object at http://www.w3schools.com/jsref/dom_obj_all.asp
+inspecting table under 'Browser Support'
+tbody, Properties
+lastChild:text is baseURI: is "http://www.w3schools.com/jsref/dom_obj_all.asp"
+what if replace by: https://en.wikipedia.org/wiki/Betty_Boop#/media/File:Betty-boop-opening-title.jpg
+
+childElementCount: 3 - what if changed to 0 ?
+
+align: "" could be changed to 'right'
+
+offsetParent: table.browserref.notranslate - play with this, see what it does
+
+draggable: false   - turn to 'true', make table draggable 
